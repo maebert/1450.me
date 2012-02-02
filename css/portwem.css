@@ -1,0 +1,174 @@
+body {
+    background: url(../img/background.png) top left repeat fixed #eee;
+    background: -webkit-gradient(radial, 50% 20%, 0, 50% 50%, 620, from(rgba(255,255,255,1)), to(rgba(255,255,255,0))) fixed, url(../img/background.png) top left repeat fixed #eee;
+    background: -moz-radial-gradient(
+      50% 20%, circle, rgba(255,255,255,1) 0px, rgba(255,255,255,0) 620px) fixed, url(../img/background.png) top left repeat fixed #eee;
+    font-family: 'EB Garamond', serif;
+	font-size: 12pt;
+    line-height: 110%;
+    margin-top: 40px;
+}
+
+#title {
+	margin-bottom: 40px;
+}
+
+#title h1 {
+	color: #444;
+	font-size: 40px;
+	text-shadow: 1px 1px #fff;
+	font-family: 'IM Fell English SC', serif;
+	margin-bottom: 10px;
+}
+	
+#title h2, #title h2 a {
+
+	color: #bbb;
+    float: left;
+    font-size: 12pt;
+    width: 450px;
+    font-style: italic;
+    line-height: 15pt;
+    font-weight: normal;
+    margin: 0px;
+    text-shadow: 1px 1px #fff;
+    font-family: 'EB Garamond', serif;
+    transition: all .5s linear;
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+}
+    
+#title .red {
+    transition: all .5s linear;
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    font-style: normal;
+}
+    
+#title h2:hover {
+    text-decoration: none;
+    color: #666;
+    margin-left: 10px;
+}
+#title h2:hover .red {
+    text-decoration: none;
+    color: #c50a0a;
+}
+    
+#title a {
+	color: #444;
+	text-decoration: none;
+}
+
+/** Main article box */
+article {
+	margin-bottom: 20px;
+
+}
+article div.content{
+	background: #fff;
+	border: 1px solid #bbb;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	float: left;
+	padding: 20px;
+	box-sizing: border-box;
+    box-shadow: 2px 2px #ddd;
+}
+
+article h3, article h3 a {
+
+}
+
+article h3 > *:first-child {
+    display: inline-block;
+	background: url(../img/banner-middle.png) top left repeat-x transparent;  
+    height: 73px;
+	padding: 10px 0px 0px 0px;        
+	margin-left: 37px;
+    font-size: 22pt;
+    color: #fafafa;
+    font-weight: normal;
+	font-family: 'IM Fell English SC', serif;        
+    text-shadow: 1px 1px #333;
+}
+
+article h3 > *:first-child:after {
+	content: url(../img/banner-right.png);
+	height: 73px;
+	width: 50px;
+	position: absolute;
+	margin-top: -10px;
+	
+}
+    
+article h3 {
+    background: url(../img/banner-left.png) top left no-repeat transparent;  
+    margin: 0px 0px 0px -40px;
+    height: 73px;
+    -moz-transition: all .2s ease-out;
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;     
+    white-space: nowrap;             
+}
+
+/** Intro */
+
+#intro {
+	width: 250px;
+	height: 158px;
+	margin-top: -100px;
+	background: url(../img/mugshot.png) 0px 85px no-repeat transparent;
+	-webkit-transition: background-position .5s ease;
+	-moz-transition: background-position .5s ease;
+	transition: background-position .5s ease;
+	border-bottom: 1px solid black;   
+}
+
+#intro:after {
+    content: url(../img/lineshadow-small.png);
+    position: absolute;
+    margin-top: 158px;
+}
+#intro:hover {
+    background-position: 0px 0px;
+}
+
+/** sidebar */
+
+.blog-description {
+	clear: both;
+	line-height: 1.4em;
+	font-size: 13pt;
+	color: #999;
+	margin-top: 20px;
+	text-shadow: 0px 1px 0px white;
+}
+
+nav {
+	margin-top: 20px;
+}
+
+nav > .btn, nav > .btn-group {
+	width: 160px;
+	margin-bottom: 10px;	
+}
+
+nav > .btn-group .btn.dropdown-toggle, nav > .btn-group .dropdown-menu {
+	width: 164px;	
+}
+nav .btn {
+	height: 16px;
+	text-align: left;
+	color: #666;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: -.05em;
+}
+nav > .btn-group .btn.dropdown-toggle .caret {
+	float: right;
+}
