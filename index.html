@@ -1,9 +1,11 @@
 <html>
 <head>
-	<title>The Portwem Preludium</title>
-	<link href="css/bootstrap.css" rel="stylesheet">
+	<title>{block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PostTitle}{PostTitle} - {/block:PostTitle}{Title}</title>
+
+	<link rel="shortcut icon" href="{Favicon}" />
+	<link rel="apple-touch-icon" href="{PortraitURL-128}"/>
+	<link rel="alternate" type="application/rss+xml" href="{RSS}" />
 	<link href="css/portwem.css" rel="stylesheet">
-	<link href="css/bootstrap-responsive.css" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=IM+Fell+English+SC|Ubuntu+Mono|EB+Garamond" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -12,13 +14,16 @@
 	<header class="row" id="title">
 		<div class="span8 offset1">
 			<h1>The Portwem Preludium</h1>
-			<h2><span class="red">Portwem, n.:</span> A Martian instrument that works by inducing currents 
-	 into electric circuits, unperceivable by human beings.</h2>
+			<h2><span class="red">Portwem, n.:</span> A Martian instrument that works by inducing currents <br />into electric circuits, unperceivable by human beings.</h2>
 		</div>
 	</header>
 
 	<div class="row">
 		<div class="span9">
+			
+
+
+
 			<article class="row">
 				<div class="span1 date">19 dec</div>
 				<div class="span8 content">
@@ -26,7 +31,12 @@
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.</p><p> Duis aute irure dolor in reprehenderit in voluptate velit esse
+					consequat.</p>
+
+					<p class="quote">As all we see or seem but a dream within a dream?</p>
+					
+
+					<p> Duis aute irure dolor in reprehenderit in voluptate velit esse
 					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
@@ -58,19 +68,10 @@
 			</div> <!-- .blog-description -->
 
 			<nav>
-				<a href="/" class="btn"><i class="icon-home"></i> Home</a> <br />
-				<div class="btn-group">
-					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-					    <i class="icon-file"></i> Publications <span class="caret"></span>
-  					</a>
-  					<ul class="dropdown-menu">
-  						<li><a href="/publications" class="">Invited Talks</a></li>
-  						<li><a href="/publications" class="">Publications</a></li>
-  					</ul>
-  				</div>
-				
-				<a href="/archive" class="btn "><i class="icon-inbox"></i> Archive</a> <br />
-				<a href="http://portwempreludium.tumblr.com/rss" class="btn"><i class="icon-magnet"></i> RSS Feed</a> <br />
+				<a href="/" class="btn btn-small"><i class="icon-home"></i> Home</a> <br />
+				<a href="/" class="btn btn-small"><i class="icon-file"></i> Publications</a> <br />
+				<a href="/archive" class="btn btn-small "><i class="icon-inbox"></i> Archive</a> <br />
+				<a href="http://portwempreludium.tumblr.com/rss" class="btn btn-small"><i class="icon-magnet"></i> RSS Feed</a> <br />
 			</nav>
 <!--
 <form action="/search" method="get" class="search-bar">

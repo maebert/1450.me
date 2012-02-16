@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Description" content="{MetaDescription}" />
+	<title>{block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PostTitle}{PostTitle} - {/block:PostTitle}{Title}</title>
+
+	<link rel="shortcut icon" href="{Favicon}" />
+	<link rel="apple-touch-icon" href="{PortraitURL-128}"/>
+	<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+    
+	<!-- Default Colors -->
+	<meta name="color:Background" content="#eee" />
+	<meta name="color:Main Text" content="#555" />
+	<meta name="color:Sidebar Text" content="#555" />
+	<meta name="color:Link" content="#860000" />
+	<meta name="color:Sidebar Link" content="#860000" />
+	<meta name="color:Navigation Link" content="#555" />
+
+	<!-- Options -->
+	<meta name="if:Show Tags" content="1" />
+	<meta name="if:Show Archive Link" content="1" />
+	<meta name="if:Show Home Link in Navigation" content="1" />
+	<meta name="if:Show RSS Link in Navigation" content="1" />
+	<meta name="if:Remove White Shadow on Sidebar Text" content="0" />
+	<meta name="if:Show Album Artwork on Audio Posts" content="1" />
+	<meta name="if:Force Uppercase" content="1" />
+	<meta name="if:Show date flag on new dates only" content="0" />
+	<meta name="if:Show People I Follow" content="0" />
+	<meta name="if:Show Posts I Like" content="0" />
+	<meta name="if:Enable Endless Scrolling" content="0" />
+
+	<meta name="text:Random Post Label" content="" />
+	<meta name="text:Disqus Shortname" content="" />
+        <meta name="text:Google Analytics UA" content="" />
+    <link href='http://fonts.googleapis.com/css?family=IM+Fell+English+SC|Ubuntu+Mono|EB+Garamond' rel='stylesheet' type='text/css'>
+    <link href="http://www.portwempreludium.de/tumblr/portwem.css" rel="stylesheet">
+    <!-- For Syntax Highlighting -->
+    
+    <link rel="stylesheet" type="text/css" href="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css"></link>  
+    <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>  
+    <script type="text/javascript">
+        <!--       
+    	$(document).ready(function() {
+    			prettyPrint();
+    	});
+    	-->
+    </script>
+
+</head>
+<body>
+
+<div class="container">
+
+	<header class="row" id="title">
+		<div class="span8 offset1">
+			<h1>{Title}</h1>
+			<h2><a href="http://portwempreludium.tumblr.com/post/13128802442/the-portwem"><span class="portwem"><span class="red">Portwem, n.:</span> A Martian instrument that works by inducing currents <br />into electric circuits, unperceivable by human beings.</a></h2>
+		</div>
+	</header>
+
+	{block:TagPage}
+		<h2>Posts tagged with <span>"{Tag}"</span></h2>
+	{/block:TagPage}
+
+	{block:SearchPage}
+		<h2>{SearchResultCount} Results for <span>"{SearchQuery}"</span></h2>
+	{/block:SearchPage}
+ 
+
+	<div class="row">
+		<div class="span9"> <!-- left column -->
+
+
+ 	{block:Posts}
+ 	<article class='row'>
+
+			<div class="date span1">
+				<span class="month"><a href="{Permalink}">{ShortMonth}</a></span>
+				<span class="day"><a href="{Permalink}">{DayOfMonth}</a></span>
+			</div> <!-- .date -->
+
+			<div class="post span8">
+
+			{block:Text}
+					{block:Title}<h3><a href="{Permalink}">{Title}</a></h3>{/block:Title}
+					{Body}
+			{/block:Text}
+
+
+			{block:Photo}
+				{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}
+				{block:Caption}{Caption}{/block:Caption}
+			{/block:Photo}
+		
+			{block:Quote}
+				<p class="quote">{Quote}</p>
+				<p class="source">{block:Source}- {Source}{/block:Source}</p>
+			{/block:Quote}
+		
+			{block:Link}
+				<h3><a href="{URL}" {Target}>{Name}</a></h3>
+				{block:Description}
+				{Description}
+				{/block:Description}
+			{/block:Link}
+		
+			{block:Chat}
+				{block:Title}<h3><a href="{Permalink}">{Title}</a></h3>{/block:Title}
+				<ul class="chat">
+					{block:Lines}
+					<li>{block:Label}<span>{Label}</span> {/block:Label}{Line}</li>
+					{/block:Lines}
+				</ul>
+			{/block:Chat}
+		
+			{block:Audio}
+				{block:IfShowAlbumArtworkOnAudioPosts}{block:AlbumArt}<img src="{AlbumArtURL}" alt="{Album}" width="75" class="album-art" />{/block:AlbumArt}{/block:IfShowAlbumArtworkOnAudioPosts}
+				<div class="audio-player">{AudioPlayerGrey}</div>
+				<p class="track-info">{block:TrackName}<strong>{TrackName}</strong><br />{/block:TrackName}{block:Artist}{Artist}{/block:Artist}</p>
+				{block:Caption}{Caption}{/block:Caption}
+			{/block:Audio}
+		
+			{block:Video}
+				<div class="video-container">{Video-500}</div>
+				{block:Caption}{Caption}{/block:Caption}
+			{/block:Video}
+
+			</div> <!-- post -->
+
+ 	</article>
+	{/block:Posts}
+
+	</div><!-- left column -->
+
+	<!-- Sidebar -->
+	<aside class="span3">
+
+	    <div id="intro"></div>
+	        
+		<div class="blog-description">
+			{Description}
+		</div> <!-- .blog-description -->
+
+		<nav>
+			<a href="/" class="btn btn-small"><i class="icon-home"></i> Home</a> <br />
+			<a href="/" class="btn btn-small"><i class="icon-file"></i> Publications</a> <br />
+			<a href="/archive" class="btn btn-small "><i class="icon-inbox"></i> Archive</a> <br />
+			<a href="http://portwempreludium.tumblr.com/rss" class="btn btn-small"><i class="icon-magnet"></i> RSS Feed</a> <br />
+		</nav>
+
+<!--
+<form action="/search" method="get" class="search-bar">
+<input type="text" name="q" value="{SearchQuery}"  /><input type="submit" value="Search" />
+</form>-->
+
+	</aside> <!-- #right-column -->
+	</div> <!-- content row -->
+</div> <!-- #container -->
+
+<div id="footer">
+	<div id="footer-inner">
+		<p>Copyright &copy; 1999 - 2012 <a href="/">{Title}</a>.
+		</p>
+	</div> <!-- #footer-inner -->
+</div> <!-- #footer -->
+
+    {block:IfDisqusShortname}
+        <script type="text/javascript">
+            //<![CDATA[
+            (function() {
+                var links = document.getElementsByTagName('a');
+                var query = '?';
+                for(var i = 0; i < links.length; i++) {
+                    if(links[i].href.indexOf('#disqus_thread') >= 0) {
+                        query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+                    }
+                }
+                document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
+            })();
+            //]]>
+        </script>
+    {/block:IfDisqusShortname}
+
+<!-- +1 button -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="http://www.portwempreludium.de/tumblr//bootstrap.min.js" type="text/javascript"></script>
+
+{block:IfGoogleAnalyticsUA}
+<!-- GOOGLE ANALYTICS TRACKER CODE -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '{text:Google Analytics UA}']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+{/block:IfGoogleAnalyticsUA}
+
+</body>
+</html>
