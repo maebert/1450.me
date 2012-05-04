@@ -1,0 +1,234 @@
+@import "bootstrap.less";
+.border-radius-top(@radius: 3px) {
+       -webkit-border-top-right-radius: @radius;
+    -webkit-border-top-left-radius: @radius;
+           -moz-border-radius-topright: @radius;
+        -moz-border-radius-topleft: @radius;
+               border-top-right-radius: @radius;
+            border-top-left-radius: @radius;
+}
+
+.border-radius-bottom(@radius: 3px) {
+       -webkit-border-bottom-right-radius: @radius;
+    -webkit-border-bottom-left-radius: @radius;
+           -moz-border-radius-bottomright: @radius;
+        -moz-border-radius-bottomleft: @radius;
+               border-bottom-right-radius: @radius;
+            border-bottom-left-radius: @radius;
+}
+
+body {
+    background: url(../img/background.png) top left repeat fixed #eee;
+    background: -webkit-gradient(radial, 50% 20%, 0, 50% 50%, 620, from(rgba(255,255,255,1)), to(rgba(255,255,255,0))) fixed, url(../img/background.png) top left repeat fixed #eee;
+    background: -moz-radial-gradient(
+      50% 20%, circle, rgba(255,255,255,1) 0px, rgba(255,255,255,0) 620px) fixed, url(../img/background.png) top left repeat fixed #eee;
+    margin-top: 40px;
+}
+
+#container {
+	margin: 0px auto !important;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+::selection, ::-moz-selection {
+	background: @linkColor; /* Safari */
+	color: white;
+	text-shadow: 0px -1px 1px @linkColorHover, 0px 1px 1px  lighten(@linkColor, 25%);
+	margin: 20px;
+}
+
+#title {
+	margin-bottom: 40px;
+	h1 {
+		color: #444;
+		font-size: 40px;
+		text-shadow: 1px 1px #fff;
+		font-family: @titleFontFamily;
+		margin-bottom: 0px;
+	}
+
+	.red {
+	    .transition(all .5s linear);
+	    font-style: normal;
+	}
+	
+	h2, h2 a {
+		color: #bbb;
+	    font-size: 11pt;
+	    line-height: 15pt;
+	    font-weight: normal;
+	    margin: 0px;
+	    text-shadow: 1px 1px #fff;
+	    font-family: @titleFontFamily;
+	    .transition(all .5s linear);
+
+	    &:hover {
+	    	text-decoration: none;
+ 	 	  	color: #666;
+    		margin-left: 10px;
+    		.red {
+    			text-decoration: none;
+    			color: #c50a0a;
+    		}
+	    }
+	}
+	a {
+		color: #444;
+		text-decoration: none;
+	}
+}
+
+/** Main article box */
+
+article {
+    .date {
+        font-family: Junction, 'Helvetica Neue', Helvetica;
+        width: 40px;
+        border: 1px solid rgba(255,255,255,.2);
+        border-top: 1px solid #888;
+        background: rgba(0,0,0,.6);
+        text-align: center;
+        padding: 4px 0px;        
+        float: right;
+        position: relative;
+        .box-shadow(-1px 1px 2px rgba(0,0,0,.3));
+        .border-radius-bottom(3px);
+        right: 20px;
+        top: -122px;
+        .day, .month, .year {
+            color: white;
+        }
+        .day {
+            font-size: 23px;
+            line-height: 1em;
+            font-weight: light;
+            padding-bottom: 2px;
+        }
+        .month {
+            text-transform:uppercase;
+            font-size: 11px;
+            line-height: 1em;
+            font-weight: bold;
+        }
+        .year {
+            font-weight: bold;
+            line-height: 1em;
+            font-size: 10px;   
+        }
+    }
+    .content {
+        padding: 20px;
+        h3 {
+            font-family: Junction, 'Helvetica Neue', Helvetica;
+        }
+    }
+ 
+}
+
+article.preview {
+    background: white;
+    .border-radius(5px);
+    .banner {
+        height: 120px;
+        overflow: hidden;
+        text-align: center;
+        width: 100%;
+        background-position: center 20%;
+        background-repeat: none;
+        .box-shadow(inset 0px 1px 0px rgba(255,255,255,.7));
+        border-bottom: 1px solid #999;
+        .border-radius-top(5px);
+    }
+    margin-bottom: 20px;
+
+    .content {
+           .box-shadow(0px 0px 3px rgba(0,0,0,.2));
+
+        font-size: 11pt;
+        h3 {
+            line-height: 1.8em;
+            margin-bottom: 10px;
+            font-size: 12pt;
+        }
+    }
+}
+
+/** Intro */
+
+#intro {
+	width: 250px;
+	height: 158px;
+	margin-top: -100px;
+	background: url(../img/mugshot.png) 0px 85px no-repeat transparent;
+	-webkit-transition: background-position .5s ease;
+	-moz-transition: background-position .5s ease;
+	transition: background-position .5s ease;
+	border-bottom: 1px solid black;   
+}
+
+#intro:after {
+    content: url(../img/lineshadow-small.png);
+    position: absolute;
+    margin-top: 158px;
+}
+#intro:hover {
+    background-position: 0px 0px;
+}
+
+/** sidebar */
+
+.blog-description {
+	clear: both;
+	line-height: 1.4em;
+	font-size: 13pt;
+	color: #999;
+	margin-top: 20px;
+	text-shadow: 0px 1px 0px white;
+}
+
+nav {
+	margin-top: 20px;
+}
+
+nav > .btn, nav > .btn-group {
+	width: 160px;
+	margin-bottom: 10px;	
+}
+
+nav .btn {
+	height: 18px;
+	text-align: left;
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: -.05em;
+	text-shadow: 0 1px 0px #fff;
+}
+/** quote */
+
+p.pullquote {
+	float: right;
+	width: 300px;
+	font-size: 40px;
+	line-height: 44px;
+	margin: 0px 0px 30px 30px;
+	color: @grayDark;
+}
+
+/** code */
+
+pre, pre.prettyprint {
+    padding: 10px !important;
+    overflow-x: auto !important;
+    background: url(http://portwempreludium.de/img/background_code.png) top left repeat white !important;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border: 1px solid #aaa !important;
+}
+    
+pre, pre.prettyprint, code, code.prettyprint span {
+    font-family: "Ubuntu Mono", monospace  !important; 
+    font-size: 10pt !important;
+    line-spacing: 2px;
+}

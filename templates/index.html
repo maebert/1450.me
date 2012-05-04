@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<description>{% block synopsis %}{% endblock %}</description>
+	
+	<link rel="shortcut icon" href="{Favicon}" />
+	<link rel="apple-touch-icon" href="{PortraitURL-128}"/>
+	<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+	<link href="media/css/portwem.css" rel="stylesheet">	
+</head>
+<body>
+
+<div class="container">
+	<header class="row" id="title">
+		<div class="span8 offset1">
+			<h1>The Portwem Preludium</h1>
+			<h2><span class="red">Portwem, n.:</span> A Martian instrument that works by inducing currents <br />into electric circuits, unperceivable by human beings.</h2>
+		</div>
+	</header>
+
+	<div class="row">
+		{% for entry in entries %}
+		    {% include 'preview.html' %}
+		{% endfor %}
+	</div>
+	<div class="row">
+		<div class="span4 offset4">
+        	<div id="intro"></div>
+			<div class="blog-description">
+				My name is Manuel Ebert and I'm a scientist, web developer, designer and musician (not necessarily in this order) living in Barcelona, Spain. I'm currently doing a PhD in neuro-psychology and no, I can not read your thoughts. <br /><br />
+				This blog is about code &amp; consciousness, data &amp; design, serotonin &amp; statistics.
+			</div> <!-- .blog-description -->
+
+			<nav>
+				<a href="/" class="btn btn-small"><i class="icon-home"></i> Home</a> <br />
+				<a href="/" class="btn btn-small"><i class="icon-file"></i> Publications</a> <br />
+				<a href="/archive" class="btn btn-small "><i class="icon-inbox"></i> Archive</a> <br />
+				<a href="http://portwempreludium.tumblr.com/rss" class="btn btn-small"><i class="icon-magnet"></i> RSS Feed</a> <br />
+			</nav>
+<!--
+<form action="/search" method="get" class="search-bar">
+<input type="text" name="q" value=""  /><input type="submit" value="Search" />
+</form>-->
+		</div>
+	</div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+</body>
+</html>
+
