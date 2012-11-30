@@ -1,7 +1,7 @@
 ---
 title: "Brain Hack: Retrofitting the Sixth Sense"
 date: 2011-12-31
-category: science
+category: blog
 tags: [feelspace, brain hack]
 synopsis: A brain hack is identifying a neuronal mechanism that was evolutionary (probably) developed to do one thing, and then exploiting or hijacking this mechanism to do another. In this talk, I will present one exemplary model mechanism, how we hacked it, and the surprising results we found.
 ---

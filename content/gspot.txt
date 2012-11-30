@@ -1,0 +1,13 @@
+---
+title: G-Spot
+date: 2012-09-20
+category: portofolio
+tags: branding, design
+thumbnail: gspot-thumb.png
+background: white
+files:
+ - gspot.png
+ - gspot.png
+---
+
+A branding concept for a, uh... I'd rather not say.

@@ -1,10 +1,9 @@
 #! /usr/binpython
 # encoding: utf-8
-import knyfe
 import yaml
+import codecs
 import os
 import markdown
-import codecs
 from jinja2 import Environment, FileSystemLoader
 import pygments
 from pygments.lexers import PythonLexer
@@ -15,11 +14,21 @@ import time
 
 code_pattern = re.compile(r"^<code><pre>(.+)</pre></code>", re.MULTILINE)
 config = {
-    'content': '~/code/portwem/content'
+    'content': 'content'
 }
 
 
-class Blog(knyfe.Data):
+class Blog:
+    entries = []
+
+    def get_category(self, category):
+        return [e for e in self.entries if e['category'] == category]
+
+    def write_partial(self, entry, template):
+        html = template.render(entry=entry)
+        with codecs.open(os.path.join(entry["category"], entry["slug"] + ".html"), mode='w', encoding="utf-8") as f:
+            f.write(html)
+
     def add_entry(self, filename):
         with codecs.open(filename, encoding="utf-8") as f:
             content = f.read()
@@ -30,7 +39,7 @@ class Blog(knyfe.Data):
             entry = yaml.load(front_matter)
             entry['markdown'] = content[front_matter_end+4:]
             html = markdown.markdown(entry['markdown'])
-            code_pattern
+
             # for code in soup.find_all('pre'):
             #     hl = pygments.highlight(code.text, PythonLexer(), HtmlFormatter())
             #     #print hl
@@ -40,41 +49,35 @@ class Blog(knyfe.Data):
             entry['month'] = entry['date'].strftime("%b")
             #print time.strptime("%Y-%M-%d", entry['date'])
 
-            banner = os.path.join(os.path.dirname(filename), "img", entry['slug'])
-            mediafile = os.path.join("media", "banners",entry['slug'])
-            if os.path.exists(banner+".png"):
-                mediafile += ".png"
-                banner += ".png"
-            elif os.path.exists(banner+".jpg"):
-                mediafile += ".png"
-                banner += ".jpg"
-            else:
-                banner = None
-                mediafile += ".png"
-
-            if banner:
-                shutil.copyfile(banner, mediafile)
-            else:
-                shutil.copyfile(os.path.join(os.path.dirname(filename), "img", "default.png"), mediafile)
-
-            entry['img'] = mediafile
+            if not entry.has_key('thumbnail'):
+                mediafile = os.path.join("media", "banners",entry['slug'])
+                if os.path.exists(mediafile+".png"):
+                    entry['thumbnail'] = mediafile + ".png"
+                elif os.path.exists(banner+".jpg"):
+                    entry['thumbnail'] = mediafile + ".jpg"
 
             if type(entry['tags']) is str:
                 entry['tags'] = [t.strip() for t in entry['tags'].split(",")]
 
-
-
-            self.data.append(entry)
+            self.entries.append(entry)
+            return entry
 
 if __name__ == "__main__":
     blog = Blog()
     for filename in os.listdir(os.path.expanduser(config['content'])):
         full_filename = os.path.join(os.path.expanduser(config['content']), filename)
-        if os.path.isfile(full_filename):
+        if os.path.isfile(full_filename)  and full_filename.endswith("txt"):
             blog.add_entry(full_filename)
 
     env = Environment(loader=FileSystemLoader('templates'))
     template = env.get_template('index.html')
-    index = template.render(entries=blog.data)
+    index = template.render(portofolio=blog.get_category("portofolio"), blog=blog.get_category("blog"))
     with codecs.open('index.html', mode='w', encoding="utf-8") as f:
         f.write(index)
+    for entry in blog.get_category("portofolio"):
+        try:
+            os.mkdir("portofolio")
+        except:
+            pass
+        template = env.get_template(entry["category"] + ".partial")
+        blog.write_partial(entry, template)

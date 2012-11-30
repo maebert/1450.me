@@ -1,234 +1,210 @@
-@import "bootstrap.less";
-.border-radius-top(@radius: 3px) {
-       -webkit-border-top-right-radius: @radius;
-    -webkit-border-top-left-radius: @radius;
-           -moz-border-radius-topright: @radius;
-        -moz-border-radius-topleft: @radius;
-               border-top-right-radius: @radius;
-            border-top-left-radius: @radius;
-}
+@import "bootstrap/bootstrap.less";
+@import "bootstrap/responsive.less";
 
-.border-radius-bottom(@radius: 3px) {
-       -webkit-border-bottom-right-radius: @radius;
-    -webkit-border-bottom-left-radius: @radius;
-           -moz-border-radius-bottomright: @radius;
-        -moz-border-radius-bottomleft: @radius;
-               border-bottom-right-radius: @radius;
-            border-bottom-left-radius: @radius;
-}
+@green: rgb(199,244,38);
 
-body {
-    background: url(../img/background.png) top left repeat fixed #eee;
-    background: -webkit-gradient(radial, 50% 20%, 0, 50% 50%, 620, from(rgba(255,255,255,1)), to(rgba(255,255,255,0))) fixed, url(../img/background.png) top left repeat fixed #eee;
-    background: -moz-radial-gradient(
-      50% 20%, circle, rgba(255,255,255,1) 0px, rgba(255,255,255,0) 620px) fixed, url(../img/background.png) top left repeat fixed #eee;
-    margin-top: 40px;
-}
+body
+    {
+    background: url(../bin/cream_dust.png) top left repeat #fcfcfc;
+    &.fixnav
+        {
+        div.navbar
+            {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            }
+        div#content
+            {
+            margin-top: 60px;
+            }
+        }
+    }
 
-#container {
-	margin: 0px auto !important;
-	margin-left: auto;
-	margin-right: auto;
-}
+.portofolio-tile
+    {
+    .thumbnail
+        {
+        height: 200px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        }
+    }
 
-::selection, ::-moz-selection {
-	background: @linkColor; /* Safari */
-	color: white;
-	text-shadow: 0px -1px 1px @linkColorHover, 0px 1px 1px  lighten(@linkColor, 25%);
-	margin: 20px;
-}
+.modal-backdrop, .modal-backdrop.fade, .modal-backdrop.in, .modal-backdrop.fade.in
+    {
+    background-color: black;
+    }
 
-#title {
-	margin-bottom: 40px;
-	h1 {
-		color: #444;
-		font-size: 40px;
-		text-shadow: 1px 1px #fff;
-		font-family: @titleFontFamily;
-		margin-bottom: 0px;
-	}
+.content
+    {
 
-	.red {
-	    .transition(all .5s linear);
-	    font-style: normal;
-	}
-	
-	h2, h2 a {
-		color: #bbb;
-	    font-size: 11pt;
-	    line-height: 15pt;
-	    font-weight: normal;
-	    margin: 0px;
-	    text-shadow: 1px 1px #fff;
-	    font-family: @titleFontFamily;
-	    .transition(all .5s linear);
+    }
 
-	    &:hover {
-	    	text-decoration: none;
- 	 	  	color: #666;
-    		margin-left: 10px;
-    		.red {
-    			text-decoration: none;
-    			color: #c50a0a;
-    		}
-	    }
-	}
-	a {
-		color: #444;
-		text-decoration: none;
-	}
-}
+div.navbar
+    {
+    background: rgb(25,25,25);
+    margin: 0px;
+    div.navbar-inner
+        {
+        height: 60px;
+        background: url(../bin/nav.png) 0px 0px repeat rgb(25,25,25);
+        .border-radius(0px);
+        border: none;
+        margin: none;
+        .box-shadow(none);
+        .brand
+            {
+            color: #bbb;
+            text-shadow: 0px -1px 0px black;
+            font-family: "Junction", sans-serif;
+            font-size: 20px;
+            line-height: 20px;
+            padding: 13px 0px 0px 20px;
+            span.whatido
+                {
+                color: #888;
+                line-height: 25px;
+                font-family: "Junction", sans-serif;
+                font-size: 12px;
+                }
+            }
 
-/** Main article box */
+        ul.social
+            {
+            list-style: none;
+            margin: 5px 15px 0px 20px;
+            padding: 0px;
+            li
+                {
+                @s: 40px;
+                background: url(../bin/social.png) 0px -@s no-repeat transparent;
+                width: 40px;
+                height: 40px;
+                margin: 5px;
+                float: left;
+                &:hover
+                    {
+                    // background-position:
+                    cursor: pointer;
+                    &:before
+                        {
+                        content: "GitHub";
+                        display: block;
+                        background: rgb(26,26,26);
+                        color: #888;
+                        position: relative;
+                        width: 60px;
+                        height: 20px;
+                        top: -38px;
+                        left: -10px;
+                        line-height: 20px;
+                        text-align: center;
+                        .border-radius(3px);
+                        }
+                    &:after
+                        {
+                        content: "";
+                        display: block;
+                        width: 3px;
+                        height: 3px;
+                        position: relative;
+                        top: -38px;
+                        left: 12px;
+                        border-left:   6px solid transparent;
+                        border-bottom: 6px solid transparent;
+                        border-right:  6px solid transparent;
+                        border-top:    6px solid rgb(26,26,26);
+                        }
+                    }
 
-article {
-    .date {
-        font-family: Junction, 'Helvetica Neue', Helvetica;
-        width: 40px;
-        border: 1px solid rgba(255,255,255,.2);
-        border-top: 1px solid #888;
-        background: rgba(0,0,0,.6);
-        text-align: center;
-        padding: 4px 0px;        
-        float: right;
+                    &.github   { background-position: -0*@s -@s; &:hover{ background-position: -0*@s 0px; &:before { content: "GitHub";} } }
+                    &.dribble  { background-position: -1*@s -@s; &:hover{ background-position: -1*@s 0px; &:before { content: "Dribbble";} } }
+                    &.linkedin { background-position: -2*@s -@s; &:hover{ background-position: -2*@s 0px; &:before { content: "LinkedIn";} } }
+                    &.facebook { background-position: -3*@s -@s; &:hover{ background-position: -3*@s 0px; &:before { content: "Facebook";} } }
+                    &.twitter  { background-position: -4*@s -@s; &:hover{ background-position: -4*@s 0px; &:before { content: "Twitter";} } }
+                    &.google   { background-position: -5*@s -@s; &:hover{ background-position: -5*@s 0px; &:before { content: "Google+";} } }
+                    &.heyday   { background-position: -6*@s -@s; &:hover{ background-position: -6*@s 0px; &:before { content: "HeyDay";} } }
+                }
+            }
+        }
+        ul.nav.basic
+            {
+            float: right;
+            display: block;
+            margin: 0px;
+            padding: 0px;
+            li
+                {
+                a {
+                    color: #777;
+                    text-shadow: 0px -1px 0px black;
+                    font-family: "Junction", sans-serif;
+                    font-size: 20px;
+                    line-height: 60px;
+                    padding: 0px;
+                    margin: 0px;
+                    margin: 0px 10px;
+                }
+                &:hover a
+                    {
+                    color: #ccc;
+                    }
+                padding: 0px;
+                margin: 0px;
+                }
+            }
+    }
+
+
+@media (max-width: 767px)
+    {
+    body
+        {
+        margin: 0px;
+        padding: 0px;
+        }
+    span.whatido, ul.nav.social
+        {
+        display: none;
+        }
+    div.navbar div.navbar-inner .brand
+        {
+        line-height: 60px;
+        padding: 0px 0px 0px 20px;
+        font-size: 30px;
+        }
+    }
+
+header
+    {
+    background: @green;
+    margin: 0px;
+    .avatar
+        {
+        width: 290px;
+        height: 270px;
+        background: url(../bin/beardedboy.png) 0px 0px no-repeat transparent;
         position: relative;
-        .box-shadow(-1px 1px 2px rgba(0,0,0,.3));
-        .border-radius-bottom(3px);
-        right: 20px;
-        top: -122px;
-        .day, .month, .year {
-            color: white;
+        margin: 0px auto 0px auto;
         }
-        .day {
-            font-size: 23px;
-            line-height: 1em;
-            font-weight: light;
-            padding-bottom: 2px;
+
+    #goggleLeft, #goggleRight
+        {
+        width: 92px;
+        height: 65px;
+        top: 112px;
+        position: absolute;
         }
-        .month {
-            text-transform:uppercase;
-            font-size: 11px;
-            line-height: 1em;
-            font-weight: bold;
+    #goggleLeft
+        {
+        background: url(../bin/goggle-l.png) 0px 0px no-repeat transparent;
+        left: 56px;
         }
-        .year {
-            font-weight: bold;
-            line-height: 1em;
-            font-size: 10px;   
+    #goggleRight
+        {
+        background: url(../bin/goggle-r.png) 0px 0px no-repeat transparent;
+        left: 144px;
         }
     }
-    .content {
-        padding: 20px;
-        h3 {
-            font-family: Junction, 'Helvetica Neue', Helvetica;
-        }
-    }
- 
-}
-
-article.preview {
-    background: white;
-    .border-radius(5px);
-    .banner {
-        height: 120px;
-        overflow: hidden;
-        text-align: center;
-        width: 100%;
-        background-position: center 20%;
-        background-repeat: none;
-        .box-shadow(inset 0px 1px 0px rgba(255,255,255,.7));
-        border-bottom: 1px solid #999;
-        .border-radius-top(5px);
-    }
-    margin-bottom: 20px;
-
-    .content {
-           .box-shadow(0px 0px 3px rgba(0,0,0,.2));
-
-        font-size: 11pt;
-        h3 {
-            line-height: 1.8em;
-            margin-bottom: 10px;
-            font-size: 12pt;
-        }
-    }
-}
-
-/** Intro */
-
-#intro {
-	width: 250px;
-	height: 158px;
-	margin-top: -100px;
-	background: url(../img/mugshot.png) 0px 85px no-repeat transparent;
-	-webkit-transition: background-position .5s ease;
-	-moz-transition: background-position .5s ease;
-	transition: background-position .5s ease;
-	border-bottom: 1px solid black;   
-}
-
-#intro:after {
-    content: url(../img/lineshadow-small.png);
-    position: absolute;
-    margin-top: 158px;
-}
-#intro:hover {
-    background-position: 0px 0px;
-}
-
-/** sidebar */
-
-.blog-description {
-	clear: both;
-	line-height: 1.4em;
-	font-size: 13pt;
-	color: #999;
-	margin-top: 20px;
-	text-shadow: 0px 1px 0px white;
-}
-
-nav {
-	margin-top: 20px;
-}
-
-nav > .btn, nav > .btn-group {
-	width: 160px;
-	margin-bottom: 10px;	
-}
-
-nav .btn {
-	height: 18px;
-	text-align: left;
-	font-size: 13px;
-	font-weight: bold;
-	letter-spacing: -.05em;
-	text-shadow: 0 1px 0px #fff;
-}
-/** quote */
-
-p.pullquote {
-	float: right;
-	width: 300px;
-	font-size: 40px;
-	line-height: 44px;
-	margin: 0px 0px 30px 30px;
-	color: @grayDark;
-}
-
-/** code */
-
-pre, pre.prettyprint {
-    padding: 10px !important;
-    overflow-x: auto !important;
-    background: url(http://portwempreludium.de/img/background_code.png) top left repeat white !important;
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border: 1px solid #aaa !important;
-}
-    
-pre, pre.prettyprint, code, code.prettyprint span {
-    font-family: "Ubuntu Mono", monospace  !important; 
-    font-size: 10pt !important;
-    line-spacing: 2px;
-}
