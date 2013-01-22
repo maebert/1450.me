@@ -39,6 +39,9 @@ body
 
 .content
     {
+    position: relative;
+    z-index: 150;
+    background: url(../bin/cream_dust.png) top left repeat #fcfcfc;
 
     }
 
@@ -46,6 +49,8 @@ div.navbar
     {
     background: rgb(25,25,25);
     margin: 0px;
+    position: relative;
+    z-index: 200;
     div.navbar-inner
         {
         height: 60px;
@@ -157,6 +162,19 @@ div.navbar
             }
     }
 
+body.fixnav div.navbar div.navbar-inner ul.social li:hover
+    {
+    &:before
+        {
+        top: 60px;
+        }
+    &:after
+        {
+        top: 25px;
+        border-top: 6px solid transparent;
+        border-bottom:    6px solid rgb(26,26,26);
+        }
+    }
 
 @media (max-width: 767px)
     {
@@ -188,6 +206,7 @@ header
         background: url(../bin/beardedboy.png) 0px 0px no-repeat transparent;
         position: relative;
         margin: 0px auto 0px auto;
+        z-index: 100;
         }
 
     #goggleLeft, #goggleRight

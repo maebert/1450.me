@@ -35,7 +35,7 @@ function scroll ()
     {
     var p = $(window).scrollTop() /header_height;
     goggles(clamp(p*2));
-    avatar(clamp(p*1.5));
+    avatar(p*1.8);
     navbar(p)
     }
 
