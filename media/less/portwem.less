@@ -2,10 +2,29 @@
 @import "bootstrap/responsive.less";
 
 @green: rgb(199,244,38);
+@red: #ef684e;
+@dark: #2d2c27;
+@light: #f2f2e8;
+@shade1: #3c3b32;
+@shade2: #7c7c69;
+
+@font-face {
+    font-family: 'Junction';
+    src: url('../fonts/Junction-webfont.eot');
+    src: url('../fonts/Junction-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Junction-webfont.woff') format('woff'),
+         url('../fonts/Junction-webfont.ttf') format('truetype'),
+         url('../fonts/Junction-webfont.svg#junctionregularRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 @mobile-width: 768px;
 body
     {
-    background: url(../bin/subtle_dots.png) top left repeat red;
+    background: url(../bin/backround.png) top left repeat red;
     }
 
 .portofolio-tile
@@ -27,7 +46,7 @@ body
     {
     position: relative;
     z-index: 150;
-    background: url(../bin/subtle_dots.png) top left repeat #fcfcfc;
+    background: url(../bin/background.png) top left repeat #fcfcfc;
     }
 
 .container
@@ -72,7 +91,13 @@ body
             }
         div.tags
             {
-            background: #333333;
+            .badge
+                {
+                background: @light;
+                color: @dark;
+                text-shadow: none;
+                }
+            background: @dark;
             position: absolute;
             top: 100%;
             padding: 0px 5px;
@@ -82,7 +107,8 @@ body
             height: 0px;
             z-index: 300;
             overflow: hidden;
-            .box-shadow(0px 1px 3px rgba(0,0,0,.3));
+            @shadows: 0px 1px 3px rgba(0,0,0,.3), inset 0px 4px 0px @red;
+            .box-shadow(@shadows);
             .transition(all .2s ease);
             &:before
                 {
@@ -92,7 +118,7 @@ body
                 border-top:    10px solid transparent;
                 border-left:   10px solid transparent;
                 border-right:  10px solid transparent;
-                border-bottom: 10px solid #333333;
+                border-bottom: 10px solid @red;
                 content: "";
                 top: -20px;
                 left: 50%;
@@ -108,7 +134,7 @@ body
                 }
             div.tags
                 {
-                padding: 5px;
+                padding: 9px 5px 5px 5px;
                 overflow: visible;
                 height: auto;
                 }
