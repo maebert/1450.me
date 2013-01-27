@@ -1,0 +1,165 @@
+
+div.navbar
+    {
+    background: rgb(25,25,25);
+    margin: 0px;
+    position: relative;
+    z-index: 200;
+    div.navbar-inner
+        {
+        height: 60px;
+        background: url(../bin/nav.png) 0px 0px repeat rgb(25,25,25);
+        .border-radius(0px);
+        border: none;
+        margin: none;
+        .box-shadow(none);
+        .brand
+            {
+            color: #bbb;
+            text-shadow: 0px -1px 0px black;
+            font-family: "Junction", sans-serif;
+            font-size: 20px;
+            line-height: 20px;
+            padding: 13px 0px 0px 20px;
+            span.whatido
+                {
+                color: #888;
+                line-height: 25px;
+                font-family: "Junction", sans-serif;
+                font-size: 12px;
+                }
+            }
+
+        ul.social
+            {
+            list-style: none;
+            margin: 5px 15px 0px 20px;
+            padding: 0px;
+            li
+                {
+                @s: 40px;
+                background: url(../bin/social.png) 0px -@s no-repeat transparent;
+                width: 40px;
+                height: 40px;
+                margin: 5px;
+                float: left;
+                &:hover
+                    {
+                    // background-position:
+                    cursor: pointer;
+                    &:before
+                        {
+                        content: "GitHub";
+                        display: block;
+                        background: rgb(26,26,26);
+                        color: #888;
+                        position: relative;
+                        width: 60px;
+                        height: 20px;
+                        top: -38px;
+                        left: -10px;
+                        line-height: 20px;
+                        text-align: center;
+                        .border-radius(3px);
+                        }
+                    &:after
+                        {
+                        content: "";
+                        display: block;
+                        width: 3px;
+                        height: 3px;
+                        position: relative;
+                        top: -38px;
+                        left: 12px;
+                        border-left:   6px solid transparent;
+                        border-bottom: 6px solid transparent;
+                        border-right:  6px solid transparent;
+                        border-top:    6px solid rgb(26,26,26);
+                        }
+                    }
+
+                    &.github   { background-position: -0*@s -@s; &:hover{ background-position: -0*@s 0px; &:before { content: "GitHub";} } }
+                    &.dribble  { background-position: -1*@s -@s; &:hover{ background-position: -1*@s 0px; &:before { content: "Dribbble";} } }
+                    &.linkedin { background-position: -2*@s -@s; &:hover{ background-position: -2*@s 0px; &:before { content: "LinkedIn";} } }
+                    &.facebook { background-position: -3*@s -@s; &:hover{ background-position: -3*@s 0px; &:before { content: "Facebook";} } }
+                    &.twitter  { background-position: -4*@s -@s; &:hover{ background-position: -4*@s 0px; &:before { content: "Twitter";} } }
+                    &.google   { background-position: -5*@s -@s; &:hover{ background-position: -5*@s 0px; &:before { content: "Google+";} } }
+                    &.heyday   { background-position: -6*@s -@s; &:hover{ background-position: -6*@s 0px; &:before { content: "HeyDay";} } }
+                }
+            }
+        }
+        ul.nav.basic
+            {
+            float: right;
+            display: block;
+            margin: 0px;
+            padding: 0px;
+            li
+                {
+                a {
+                    color: #777;
+                    text-shadow: 0px -1px 0px black;
+                    font-family: "Junction", sans-serif;
+                    font-size: 20px;
+                    line-height: 60px;
+                    padding: 0px;
+                    margin: 0px;
+                    margin: 0px 10px;
+                }
+                &:hover a
+                    {
+                    color: #ccc;
+                    }
+                padding: 0px;
+                margin: 0px;
+                }
+            }
+    }
+
+body.fixnav div.navbar div.navbar-inner ul.social li:hover
+    {
+    &:before
+        {
+        top: 60px;
+        }
+    &:after
+        {
+        top: 25px;
+        border-top: 6px solid transparent;
+        border-bottom:    6px solid rgb(26,26,26);
+        }
+    }
+
+@media (max-width: @mobile-width)
+    {
+    body
+        {
+        margin: 0px;
+        padding: 0px;
+        }
+    span.whatido, ul.nav.social
+        {
+        display: none;
+        }
+    div.navbar div.navbar-inner .brand
+        {
+        line-height: 60px;
+        padding: 0px 0px 0px 20px;
+        font-size: 30px;
+        }
+    }
+
+body.fixnav
+    {
+    div.navbar
+        {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        }
+    div#content
+        {
+        margin-top: 60px;
+        }
+    }

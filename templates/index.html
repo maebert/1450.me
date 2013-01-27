@@ -54,25 +54,11 @@
 
 		<a name="portofolio"><h2>Portofolio</h2></a>
 
-		<div class="row">
+        <div class="masonry-container">
 			{% for entry in portofolio %}
 			    {% include 'portofolio-entry.html' %}
 			{% endfor %}
-		</div>
-
-		<a name="blog"><h2>Blog</h2></a>
-
-		<div class="row">
-			{% for entry in blog %}
-			    {% include 'preview.html' %}
-			{% endfor %}
-            {% for entry in blog %}
-                {% include 'preview.html' %}
-            {% endfor %}
-            {% for entry in blog %}
-                {% include 'preview.html' %}
-            {% endfor %}
-		</div>
+        </div>
 
         <a name="contact"><h2>Contact</h2></a>
 	</div> <!-- container -->
@@ -83,6 +69,5 @@
 <script src="media/js/bootstrap-modal.js"></script>
 <script src="media/js/bootstrap-modalmanager.js"></script>
 <script src="media/js/portwem.js"></script>
+<script src="media/js/masonry.min.js"></script>
 </body>
-</html>
-

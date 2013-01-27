@@ -66,4 +66,12 @@ $(function()
     scroll();
     $(window).resize(scroll).scroll(scroll);
     $('#navbar').scrollspy()
+
+    $('.masonry-container').masonry({
+        itemSelector: '.portofolio-tile'
+      , isAnimated: false
+      , columnWidth: function( containerWidth ) { return containerWidth / 4;}
+      , gutterWidth: 0
+    });
+
     });

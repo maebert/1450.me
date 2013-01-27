@@ -1,13 +1,12 @@
-<div class="span4">
-    <div class="portofolio-tile" data-source="{{entry.category}}/{{entry.slug}}.html">
-        <div class="thumbnail" style="background-image: url(media/img/{{ entry.thumbnail }}); {% if entry.background %}background-color: {{entry.background}};{% endif%}{% if entry.thumbnailstyle %}background-size: {{entry.thumbnailstyle}};{% endif%}"></div>
-        <div class="description">
-            <h3><a href="{{entry.category}}/{{entry.slug}}.html">{{ entry.title }}</a></h3>
-            <div class="tags">
-                {% for tag in entry.tags %}
-                <span class="badge tag">{{ tag }}</span>
-                {%endfor%}
-            </div>
+<div class="portofolio-tile colspan{{entry.width or 1}} rowspan{{entry.height or 1}}" data-source="{{entry.category}}/{{entry.slug}}.html">
+    <div class="thumbnail" style="background-image: url(media/img/{{ entry.thumbnail }}); {% if entry.background %}background-color: {{entry.background}};{% endif%}{% if entry.thumbnailstyle %}background-size: {{entry.thumbnailstyle}};{% endif%}">
+    <div class="description">
+        <h3>{{ entry.title }}</h3>
+        <div class="tags">
+            {% for tag in entry.tags %}
+            <span class="badge tag">{{ tag }}</span>
+            {%endfor%}
         </div>
-    </div>
+    </div>    </div>
+
 </div>
