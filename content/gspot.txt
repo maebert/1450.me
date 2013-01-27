@@ -5,6 +5,8 @@ category: portofolio
 tags: branding, design
 thumbnail: gspot-thumb.png
 background: white
+width: 1
+height: 1
 files:
  - gspot.png
  - gspot.png
