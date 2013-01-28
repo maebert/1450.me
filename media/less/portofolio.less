@@ -30,7 +30,8 @@
             border: none;
             .transition(all .2s ease);
             .border-radius(0px);
-            .box-shadow(0px 2px 4px #ddd);
+            @shadows: 0px 2px 5px rgba(0,0,0,.3), inset 0px 0px 0px 1px rgba(0,0,0,.1);
+            .box-shadow(@shadows);
             }
         &.rowspan1 .thumbnail { height: 200px;}
         &.rowspan2 .thumbnail { height: 400px;}
@@ -45,12 +46,17 @@
             width: 100%;
             text-align: center;
             font-size: 1.2em;
+            font-family: "Junction", "Helvetica Neue", Helvetica, Arial;
             }
         div.tags
             {
             .badge
                 {
+                font-family: "Junction", "Helvetica Neue", Helvetica, Arial;
                 background: @light;
+                .border-radius(9pt);
+                font-size: 9pt;
+                padding: 1px 5px;
                 color: @dark;
                 text-shadow: none;
                 }
@@ -86,8 +92,9 @@
             {
             .thumbnail
                 {
-                .box-shadow(0px 3px 6px #aaa);
-                 // .box-shadow(inset 0px 0px 0px 1px #333333);
+                @shadows: 0px 4px 8px rgba(0,0,0,.5), inset 0px 0px 0px 1px rgba(0,0,0,.2);
+                .box-shadow(@shadows);
+
                 }
             div.tags
                 {
