@@ -1,0 +1,44 @@
+.blog-container
+    {
+    article.preview
+        {
+        width: 32.5%;
+        padding: 0px 10px;
+        .box-sizing(border-box);
+        margin-bottom: 30px;
+        .date
+            {
+            .title();
+            text-align: center;
+            width: 100%;
+            display: block;
+            date
+                {
+                color: @shade2;
+                padding: 0px 10px;
+                background: url(../bin/background.png) top left repeat;
+                }
+            &:before
+                {
+                content: "";
+                width: 100%;
+                display: block;
+                border-bottom: 1px solid @shade2;
+                margin-bottom: -11px;
+                }
+            }
+        h3, h3 a
+            {
+            .title();
+            text-decoration: none;
+            color: @darkred;
+            }
+        summary
+            {
+            .body();
+            color: @shade1;
+            font-size: 11pt;
+            line-height: 1.5em;
+            }
+        }
+    }

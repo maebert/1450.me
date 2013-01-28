@@ -82,5 +82,11 @@ $(function()
       , columnWidth: function( containerWidth ) { return containerWidth / 4;}
       , gutterWidth: 0
     });
+    $('.masonry-container-blog').masonry({
+        itemSelector: 'article'
+      , isAnimated: false
+      , columnWidth: function( containerWidth ) { return containerWidth / 3;}
+      , gutterWidth: 0
+    });
 
     });

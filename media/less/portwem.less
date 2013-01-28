@@ -7,6 +7,7 @@
 
 @green: rgb(199,244,38);
 @red: #ef684e;
+@darkred: #883120;
 @dark: #2d2c27;
 @light: #f2f2e8;
 @shade1: #3c3b32;
@@ -23,6 +24,26 @@
     font-style: normal;
 }
 
+.title()
+    {
+    font-family: "Junction", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+    }
+
+.body()
+    {
+    font-family: "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+    }
+
+p, td, tr, span, div
+    {
+    .body();
+    }
+
+h1, h2, h3, h4, .tooltip, .badge, .tag
+    {
+    .title();
+    }
+
 @mobile-width: 768px;
 body
     {
@@ -35,14 +56,24 @@ body
     background-color: black;
     }
 
+h2
+    {
+    .title();
+    text-align: center;
+    margin: 40px 0px 40px 0px;
+    color: @dark;
+    }
+
 .content
     {
     position: relative;
     z-index: 150;
+    padding: 1px 20px;
     background: url(../bin/background.png) top left repeat #fcfcfc;
     }
 
 @import "header.less";
 @import "navigation.less";
 @import "portofolio.less";
+@import "blog.less";
 
