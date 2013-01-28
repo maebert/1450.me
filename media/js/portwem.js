@@ -22,6 +22,14 @@ function avatar (percent)
     var t = (percent + 1) * (header_height / 2 - 140);
     $(".avatar").css("top", t + "px");
     }
+function name (percent)
+    {
+    var t = (percent + 1) * (header_height / 2 - 100);
+    $("#name").css({
+        "top": t + "px"
+      , "opacity": clamp(1 - (percent * 2))
+        });
+    }
 
 function navbar (percent)
     {
@@ -36,6 +44,7 @@ function scroll ()
     var p = $(window).scrollTop() /header_height;
     goggles(clamp(p*2));
     avatar(p*1.8);
+    name(p*1.8);
     navbar(p)
     }
 

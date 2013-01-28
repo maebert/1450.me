@@ -21,11 +21,12 @@
         <div id="goggleLeft"></div>
         <div id="goggleRight"></div>
     </div>
+    <div id="name">likes making beautiful stuff.</div>
 </header>
 <nav class=".container">
     <div class="navbar">
       <div class="navbar-inner">
-            <a class="brand" href="#">
+            <a class="brand" id="brand" href="#">
                 Manuel Ebert <br />
                 <span class="whatido">Ex-Neuroscientist, Designer &amp; Developer.</span>
 
@@ -52,15 +53,23 @@
 <div class="content" id="content">
 	<div class="container">
 
-		<a name="portofolio"><h2>Portofolio</h2></a>
+        <h2 id="portofolio">Portofolio</h2>
 
         <div class="masonry-container">
-			{% for entry in portofolio %}
-			    {% include 'portofolio-entry.html' %}
+            {% for entry in portofolio %}
+                {% include 'portofolio-entry.html' %}
+            {% endfor %}
+        </div>
+
+        <h2 id="blog">Blog</h2>
+
+        <div class="masonry-container">
+			{% for entry in blog %}
+			    {% include 'preview.html' %}
 			{% endfor %}
         </div>
 
-        <a name="contact"><h2>Contact</h2></a>
+        <h2 id="contact">Contact</h2>
 	</div> <!-- container -->
 </div> <!-- content -->
 

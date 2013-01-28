@@ -20,10 +20,19 @@ div.navbar
             font-family: "Junction", sans-serif;
             font-size: 20px;
             line-height: 20px;
-            padding: 13px 0px 0px 20px;
+            text-decoration: none;
+            text-shadow: none;
+            font-weight: lighter;
+            color: @shade2;
+            // display: none;
+            margin-left: -400px;
+            margin-right: 20px;
+            .transition(margin 1.5s ease);
+            padding: 13px 0px 0px 10px;
             span.whatido
                 {
-                color: #888;
+                color: @shade2;
+                .opacity(80);
                 line-height: 25px;
                 font-family: "Junction", sans-serif;
                 font-size: 12px;
@@ -33,7 +42,7 @@ div.navbar
         ul.social
             {
             list-style: none;
-            margin: 5px 15px 0px 20px;
+            margin: 5px 15px 0px 0px;
             padding: 0px;
             li
                 {
@@ -158,12 +167,17 @@ body.fixnav div.navbar div.navbar-inner ul.social li:hover
 
 body.fixnav
     {
+    margin-top: 20px;
     div.navbar
         {
         position: fixed;
         top: 0px;
         left: 0px;
         width: 100%;
+        }
+    #brand
+        {
+        margin-left: 0px;
         }
     div#content
         {

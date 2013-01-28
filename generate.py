@@ -11,10 +11,14 @@ from pygments.formatters import HtmlFormatter
 import re
 import shutil
 import time
+import distutils.dir_util
 
 code_pattern = re.compile(r"^<code><pre>(.+)</pre></code>", re.MULTILINE)
 config = {
-    'content': 'content'
+    'content': 'content',
+    'output': '/Users/maebert/projects/maebert.github.com',
+    'media': '/Users/maebert/projects/portwempreludium/media',
+    'content': '/Users/maebert/projects/portwempreludium/content'
 }
 
 
@@ -26,7 +30,7 @@ class Blog:
 
     def write_partial(self, entry, template):
         html = template.render(entry=entry)
-        with codecs.open(os.path.join(entry["category"], entry["slug"] + ".html"), mode='w', encoding="utf-8") as f:
+        with codecs.open(get_abs_path(os.path.join(entry["category"], entry["slug"] + ".html")), mode='w', encoding="utf-8") as f:
             f.write(html)
 
     def add_entry(self, filename):
@@ -62,6 +66,17 @@ class Blog:
             self.entries.append(entry)
             return entry
 
+def get_abs_path(filename, mkdir=False):
+    path = os.path.join(config['output'], filename)
+    if mkdir:
+        try:
+            os.mkdir(path)
+        except:
+            pass
+    return path
+
+distutils.dir_util.copy_tree
+
 if __name__ == "__main__":
     blog = Blog()
     for filename in os.listdir(os.path.expanduser(config['content'])):
@@ -72,12 +87,12 @@ if __name__ == "__main__":
     env = Environment(loader=FileSystemLoader('templates'))
     template = env.get_template('index.html')
     index = template.render(portofolio=blog.get_category("portofolio"), blog=blog.get_category("blog"))
-    with codecs.open('index.html', mode='w', encoding="utf-8") as f:
+    with codecs.open(get_abs_path('index.html'), mode='w', encoding="utf-8") as f:
         f.write(index)
+
+    media_dst = get_abs_path("media", mkdir=True)
+    distutils.dir_util.copy_tree(config['media'], media_dst)
     for entry in blog.get_category("portofolio"):
-        try:
-            os.mkdir("portofolio")
-        except:
-            pass
+        get_abs_path("portofolio", mkdir=True)
         template = env.get_template(entry["category"] + ".partial")
         blog.write_partial(entry, template)

@@ -1,5 +1,9 @@
-@import "bootstrap/bootstrap.less";
-@import "bootstrap/responsive.less";
+// @import "bootstrap/bootstrap.less";
+// @import "bootstrap/responsive.less";
+
+@import "bootstrap/variables.less";
+@import "bootstrap/mixins.less";
+@import "bootstrap/navbar.less";
 
 @green: rgb(199,244,38);
 @red: #ef684e;
@@ -19,22 +23,11 @@
     font-style: normal;
 }
 
-
-
 @mobile-width: 768px;
 body
     {
-    background: url(../bin/backround.png) top left repeat red;
-    }
-
-.portofolio-tile
-    {
-    .thumbnail
-        {
-        height: 200px;
-        background-position: center center;
-        background-repeat: no-repeat;
-        }
+    margin: 0px;
+    background: url(../bin/background.png) top left repeat @red;
     }
 
 .modal-backdrop, .modal-backdrop.fade, .modal-backdrop.in, .modal-backdrop.fade.in
@@ -49,110 +42,7 @@ body
     background: url(../bin/background.png) top left repeat #fcfcfc;
     }
 
-.container
-    {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0px auto;
-    padding: 0px;
-    .portofolio-tile
-        {
-        .box-sizing(border-box);
-        padding: 0px 2px;
-        margin: 0px;
-        width: 24.5%;
-        margin-bottom: 10px;
-        &.colspan1 {width: 24.5%;}
-        &.colspan2 {width: 49.5%;}
-        &.colspan3 {width: 74.5%;}
-        &.colspan4 {width: 99.5%;}
-        .thumbnail
-            {
-            padding: 0;
-            position: relative;
-            border: none;
-            .transition(all .2s ease);
-            .border-radius(0px);
-            .box-shadow(0px 2px 4px #ddd);
-            }
-        &.rowspan1 .thumbnail { height: 200px;}
-        &.rowspan2 .thumbnail { height: 400px;}
-        &.rowspan3 .thumbnail { height: 600px;}
-        &.rowspan4 .thumbnail { height: 800px;}
-        h3
-            {
-            position: absolute;
-            bottom: 0px;
-            font-weight: normal;
-            margin: 0px;
-            width: 100%;
-            text-align: center;
-            font-size: 1.2em;
-            }
-        div.tags
-            {
-            .badge
-                {
-                background: @light;
-                color: @dark;
-                text-shadow: none;
-                }
-            background: @dark;
-            position: absolute;
-            top: 100%;
-            padding: 0px 5px;
-            .box-sizing(border-box);
-            width: 100%;
-            margin-top: 15px;
-            height: 0px;
-            z-index: 300;
-            overflow: hidden;
-            @shadows: 0px 1px 3px rgba(0,0,0,.3), inset 0px 4px 0px @red;
-            .box-shadow(@shadows);
-            .transition(all .2s ease);
-            &:before
-                {
-                width: 0px;
-                height: 0px;
-                position: absolute;
-                border-top:    10px solid transparent;
-                border-left:   10px solid transparent;
-                border-right:  10px solid transparent;
-                border-bottom: 10px solid @red;
-                content: "";
-                top: -20px;
-                left: 50%;
-                margin-left: -10px;
-                }
-            }
-        &:hover
-            {
-            .thumbnail
-                {
-                .box-shadow(0px 3px 6px #aaa);
-                 // .box-shadow(inset 0px 0px 0px 1px #333333);
-                }
-            div.tags
-                {
-                padding: 9px 5px 5px 5px;
-                overflow: visible;
-                height: auto;
-                }
-            }
-        }
-    }
-
-@media (max-width: @mobile-width)
-    {
-    .container .portofolio-tile
-        {
-        &.colspan1 {width: 49.5%;}
-        &.colspan2 {width: 99.5%;}
-        &.colspan3 {width: 99.5%;}
-        &.colspan4 {width: 99.5%;}
-        }
-    }
-
 @import "header.less";
 @import "navigation.less";
+@import "portofolio.less";
 
