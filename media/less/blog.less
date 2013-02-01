@@ -3,38 +3,37 @@
     article.preview
         {
         width: 32.5%;
-        padding: 0px 10px;
+        padding: 10px 10px;
         .box-sizing(border-box);
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         .date
             {
+            .box-shadow(0px 1px 5px rgba(0,0,0,.2));
             .title();
             text-align: center;
-            width: 100%;
-            display: block;
-            date
-                {
-                color: @shade2;
-                padding: 0px 10px;
-                background: url(../bin/background.png) top left repeat;
-                }
-            &:before
-                {
-                content: "";
-                width: 100%;
-                display: block;
-                border-bottom: 1px solid @shade2;
-                margin-bottom: -11px;
-                }
+            padding: 5px 0px;
+            font-size: 9pt;
+            color: @shade2;
+            background: @shade1;
             }
-        h3, h3 a
+        h3
             {
             .title();
-            text-decoration: none;
-            color: @darkred;
+            background: @red;
+            margin: 0px;
+            .box-shadow(0px 1px 5px rgba(0,0,0,.2));
+            padding: 10px;
+            a
+                {
+                text-decoration: none;
+                color: @dark;
+                }
             }
         summary
             {
+            .box-shadow(0px 1px 5px rgba(0,0,0,.2));
+            padding: 10px;
+            background: white;
             .body();
             color: @shade1;
             font-size: 11pt;
