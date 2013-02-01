@@ -2,6 +2,7 @@
 title: Violence
 date: 2012-04-12
 category: blog
+icon: comment
 tags: punchline
 synopsis: Violence is not an answer.
 ---

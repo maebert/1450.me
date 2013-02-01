@@ -82,11 +82,17 @@ $(function()
       , columnWidth: function( containerWidth ) { return containerWidth / 4;}
       , gutterWidth: 0
     });
-    $('.masonry-container-blog').masonry({
-        itemSelector: 'article'
-      , isAnimated: false
-      , columnWidth: function( containerWidth ) { return containerWidth / 3;}
-      , gutterWidth: 0
-    });
+
+
+    var left_column_height = 0;
+    var right_column_height = 0;
+    var items = $('.article-container');
+    for (var i = 0; i < items.length; i++) {
+    if (left_column_height > right_column_height) {
+        right_column_height+= items.eq(i).addClass('right').outerHeight(true);
+    } else {
+        left_column_height+= items.eq(i).addClass('left').outerHeight(true);
+    }
+}
 
     });

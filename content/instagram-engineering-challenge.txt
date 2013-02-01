@@ -2,6 +2,7 @@
 title: Solving the Instagram Engineering Challenge in 15 lines of code in Python
 date: 2012-04-12
 category: blog
+icon: computer
 tags: python
 synopsis: "The folks at Instagram posed an interesting challenge: Basically, your task was to take an shredded image and undo the random shredding process with a few lines of code in a language of your choice. In their blog post, they wrote it took them 150 lines of code in python. So I thought a reasonable challenge would be be to solve the task in 15 lines of code."
 ---

@@ -2,6 +2,7 @@
 title: Using LaTeX like it's 2012
 date: 2012-01-14
 category: blog
+icon: tools
 tags: Latex, DIY
 synopsis: If you're working in the natural sciences, sooner or later you will have to learn how to typeset in Latex. Here are some tools and shortcuts to boost your productivity.
 ---
