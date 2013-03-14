@@ -76,14 +76,6 @@ $(function()
     $(window).resize(scroll).scroll(scroll);
     $('#navbar').scrollspy()
 
-    $('.masonry-container').masonry({
-        itemSelector: '.portofolio-tile'
-      , isAnimated: false
-      , columnWidth: function( containerWidth ) { return containerWidth / 4;}
-      , gutterWidth: 0
-    });
-
-
     var left_column_height = 0;
     var right_column_height = 0;
     var items = $('.article-container');

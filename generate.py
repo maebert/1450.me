@@ -25,6 +25,12 @@ config = {
 class Blog:
     entries = []
 
+    def add_folder(self, path):
+        for filename in os.listdir(path):
+            full_filename = os.path.join(path, filename)
+            if os.path.isfile(full_filename)  and full_filename.endswith("txt"):
+                self.add_entry(full_filename)
+
     def get_category(self, category):
         return [e for e in self.entries if e['category'] == category]
 
@@ -54,11 +60,7 @@ class Blog:
             #print time.strptime("%Y-%M-%d", entry['date'])
 
             if not entry.has_key('thumbnail'):
-                mediafile = os.path.join("media", "banners",entry['slug'])
-                if os.path.exists(mediafile+".png"):
-                    entry['thumbnail'] = mediafile + ".png"
-                elif os.path.exists(banner+".jpg"):
-                    entry['thumbnail'] = mediafile + ".jpg"
+                mediafile = os.path.join("media", "banners", entry['slug'])
 
             if type(entry['tags']) is str:
                 entry['tags'] = [t.strip() for t in entry['tags'].split(",")]
@@ -79,10 +81,9 @@ distutils.dir_util.copy_tree
 
 if __name__ == "__main__":
     blog = Blog()
-    for filename in os.listdir(os.path.expanduser(config['content'])):
-        full_filename = os.path.join(os.path.expanduser(config['content']), filename)
-        if os.path.isfile(full_filename)  and full_filename.endswith("txt"):
-            blog.add_entry(full_filename)
+    content_path = os.path.expanduser(config['content'])
+    blog.add_folder(os.path.join("content", "blog"))
+    blog.add_folder(os.path.join("content", "portofolio"))
 
     env = Environment(loader=FileSystemLoader('templates'))
     template = env.get_template('index.html')

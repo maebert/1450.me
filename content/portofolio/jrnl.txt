@@ -1,0 +1,10 @@
+---
+title: jrnl
+date: 2011-12-02
+category: portofolio
+tags: concept, code
+background: ef684e
+color: 2d2c27
+---
+
+A branding concept for a, uh... I'd rather not say.

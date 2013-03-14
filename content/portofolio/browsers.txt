@@ -3,11 +3,7 @@ title: browser-triangles
 date: 2013-01-20
 category: portofolio
 tags: illustration
-thumbnail: browsers-thumb.png
-thumbnailstyle: contain
-background: 191919
-width: 2
-height: 1
+background: 62a3f1
 ---
 
 A branding concept for a, uh... I'd rather not say.

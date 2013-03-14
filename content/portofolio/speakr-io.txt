@@ -3,9 +3,8 @@ title: speakr.io
 date: 2013-02-01
 category: portofolio
 tags: concept, design, code
-thumbnail: speaker-thumb.png
-width: 2
-height: 2
+background: bda69c
+color: 2d2c27
 ---
 
 A branding concept for a, uh... I'd rather not say.

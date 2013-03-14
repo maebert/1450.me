@@ -3,11 +3,7 @@ title: fluidshopping
 date: 2012-07-15
 category: portofolio
 tags: design, code
-thumbnail: fs-thumb.png
-width: 1
-height: 1
-thumbnailstyle: contain
-background: edeff2
+background: cb5022
 ---
 
 A branding concept for a, uh... I'd rather not say.
