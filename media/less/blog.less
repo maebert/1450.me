@@ -1,37 +1,32 @@
 .blog-container
     {
     .clearfix();
-    background: url(../bin/divider.png) top center repeat-y transparent;
     article.preview
         {
         background: white;
-        padding: 20px;
-        @shadows: 0px 1px 5px rgba(0,0,0,.2), inset -8px 0px 0px @dark;
-        .box-shadow(@shadows);
+        padding: 3em;
+        .box-shadow(0px 1px 5px rgba(0,0,0,.2));
         position: relative;
-        &:before
-            {
-            content: "";
-            display: block;
-            border: solid 10px transparent;
-            border-left: solid 10px @dark;
-            position: absolute;
-            }
-        .date
+        .meta
             {
             .title();
             text-align: center;
-            padding: 5px 0px;
-            font-size: 9pt;
+            font-size: 1.125em;
+            line-height: 2.4em;
             color: @shade2;
+            display: block;
+            // background: fade(black, 10);
+            margin: 0.866em 0;
             }
         h3
             {
             .title();
-            margin: 0px;
+            margin: 0px 0px 4px 0px;
+            font-size: 2em;
+            line-height: 1.35em * 1.125;
             color: @darkred;
+            // background: rgba(0,0,0,.05);
             // .box-shadow(0px 1px 5px rgba(0,0,0,.2));
-            padding: 10px;
             a
                 {
                 text-decoration: none;
@@ -40,38 +35,19 @@
             }
         summary
             {
-            padding: 10px;
-            background: white;
+            // background: rgba(0,0,100,.05);
+            // margin-top: 0.866em;
             .body();
             color: @shade1;
-            font-size: 11pt;
-            line-height: 1.5em;
+            margin: -2px 0px 0px 0px;
+            font-size: 1.5em;
+            line-height: 1.8em;
             }
         }
     .article-container
         {
         width: 50%;
         position: relative;
-        &:before
-            {
-            content: "";
-            width: 32px;
-            height: 32px;
-            background: url(../bin/icons-blog.png) 0px 0px no-repeat @light;
-            position: absolute;
-            right: -14px;
-            border-top: 5px solid @light;
-            border-bottom: 5px solid @light;
-            top: 19px;
-            display: block;
-            }
-        &.icon-photo:before   { background-position: 0px 0px; }
-        &.icon-map:before     { background-position: 0px -32px; }
-        &.icon-comment:before { background-position: 0px -64px; }
-        &.icon-tools:before   { background-position: 0px -96px; }
-        &.icon-idea:before    { background-position: 0px -128px; }
-        &.icon-speaker:before { background-position: 0px -160px; }
-        &.icon-computer:before { background-position: 0px -192px; }
         &:nth-child(2)
             {
             &:before{top: 69px;}
@@ -81,32 +57,14 @@
             {
             float: left;
             clear: left;
-            padding: 10px 40px 10px 2px;
-            article.preview:before
-                {
-                right: -20px;
-                }
+            padding: 10px 10px 10px 2px;
+
             }
         &.right
             {
             float: right;
             clear: right;
-            padding: 10px 2px 10px 40px;
-            &:before
-                {
-                left: -18px;
-                }
-            article.preview
-                {
-                @shadows: 0px 1px 5px rgba(0,0,0,.2), inset 8px 0px 0px @dark;
-                .box-shadow(@shadows);
-                &:before
-                    {
-                    border: solid 10px transparent;
-                    border-right: solid 10px @dark;
-                    left: -20px;
-                    }
-                }
+            padding: 10px 2px 10px 10px;
             }
         .box-sizing(border-box);
         margin-bottom: 10px;
@@ -116,8 +74,12 @@
 
 @media (max-width: @mobile-width)
     {
-    .blog-container article.preview
+    .blog-container .article-container, .blog-container .article-container.left, .blog-container .article-container.right
         {
-        width: 99.5%;
+        width: 100%;
+        float: none;
+        margin: 20px 0px;
+        padding: 0px;
+
         }
     }
