@@ -1,9 +1,0 @@
----
-title: fluidshopping
-date: 2012-07-15
-category: portofolio
-tags: design, code
-background: cb5022
----
-
-A branding concept for a, uh... I'd rather not say.

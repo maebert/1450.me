@@ -1,9 +1,0 @@
----
-title: browser-triangles
-date: 2013-01-20
-category: portofolio
-tags: illustration
-background: 62a3f1
----
-
-A branding concept for a, uh... I'd rather not say.
