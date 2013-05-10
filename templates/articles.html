@@ -55,7 +55,7 @@
         <h2 id="portofolio">Portofolio</h2>
 
         <div class="portofolio-container">
-            {% for entry in ext.get_articles(category="portofolio") %}
+            {% for entry in site.articles(category="portofolio") %}
                 {% include theme('portofolio-entry.html', False) %}
             {% endfor %}
         </div>
