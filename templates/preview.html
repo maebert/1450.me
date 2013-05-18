@@ -6,7 +6,7 @@
         {% if entry.tags %}
             posted in <span class="tags">
                 {% if entry.tags|length > 1 %}
-                    {% for tag in entry.tags[-1] %}
+                    {% for tag in entry.tags[:-1] %}
                     <span class="badge tag">{{ tag }}</span>
                     {% endfor %}
                     and <span class="badge tag">{{ entry.tags[-1] }}</span>
