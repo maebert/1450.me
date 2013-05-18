@@ -2,8 +2,8 @@
 <article class="preview">
     <h3><a href="{{entry.category}}/{{entry.slug}}.html">{{ entry.title }}</a></h3>
     <div class="meta">
-        <date>{{ entry.date.day }} {{ entry.month }} {{ entry.date.year }}</date>
-        {% if entry.tags|length > 0 %}
+        <date>{{ entry.created.day }} {{ entry.created.month }} {{ entry.created.year }}</date>
+        {% if entry.tags %}
             posted in <span class="tags">
                 {% if entry.tags|length > 1 %}
                     {% for tag in entry.tags[-1] %}
@@ -17,7 +17,7 @@
         {% endif %}
     </div>
     <summary>
-        {{entry.synopsis}}
+        {{entry.description}}
     </summary>
 </article>
 </div>
