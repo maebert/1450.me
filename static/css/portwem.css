@@ -685,6 +685,11 @@ header #goggleRight {
     padding-top: 50%;
   }
 }
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 50%;
+  }
+}
 .blog-container,
 article.container {
   max-width: 640px;
@@ -1067,7 +1072,7 @@ body.nohead div.navbar div.navbar-inner ul.social li:hover:after {
     font-size: 30px;
   }
   nav {
-    margin-bottom: 5em !important;
+    margin-bottom: 6em !important;
   }
 }
 body.fixnav,
