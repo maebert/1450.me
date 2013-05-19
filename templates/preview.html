@@ -1,23 +1,4 @@
-<div class="article-container icon-{{entry.icon}}">
-<article class="preview">
-    <h3><a href="{{entry.category}}/{{entry.slug}}.html">{{ entry.title }}</a></h3>
-    <div class="meta">
-        <date>{{ entry.created.day }} {{ entry.created.month }} {{ entry.created.year }}</date>
-        {% if entry.tags %}
-            posted in <span class="tags">
-                {% if entry.tags|length > 1 %}
-                    {% for tag in entry.tags[:-1] %}
-                    <span class="badge tag">{{ tag }}</span>
-                    {% endfor %}
-                    and <span class="badge tag">{{ entry.tags[-1] }}</span>
-                {% else %}
-                    <span class="badge tag">{{ entry.tags[0] }}</span>
-                {% endif %}
-            </span>
-        {% endif %}
-    </div>
-    <summary>
-        {{entry.description}}
-    </summary>
-</article>
+<div class="preview">
+    <date class="right">{{ entry.created.strftime("%d %b %Y") }}</date>
+    <h3><a href="{{entry.url}}">{{ entry.title }}</a> <date class="inline">({{ entry.created.strftime("%d %b %Y") }})</date></h3>
 </div>

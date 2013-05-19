@@ -1,18 +1,6 @@
-<html>
-<head>
-    <title>{% block title %}{% endblock %}</title>
-    <description>{% block synopsis %}{% endblock %}</description>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{{ theme_static('bin/favicon.png') }}" />
-    <link rel="apple-touch-icon" href="{{ theme_static('bin/apple-touch-icon.png') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ theme_static('css/portwem.css') }}" />
-    <script src="{{ theme_static('js/modernizr-2.5.3-respond-1.1.0.min.js') }}"></script>
-</head>
-<body>
-
-<div id="portofolio-modal" class="modal container hide fade" tabindex="-1"></div>
-
+{% extends theme("base.html", False) %}
+{% block bodyclass %}landing{% endblock %}
+{% block body %}
 <header>
     <div class="avatar">
         <div id="goggleLeft"></div>
@@ -20,32 +8,7 @@
     </div>
     <div id="name">likes making beautiful stuff.</div>
 </header>
-<nav class=".container">
-    <div class="navbar">
-      <div class="navbar-inner">
-            <a class="brand" id="brand" href="#">
-                Manuel Ebert <br />
-                <span class="whatido">Ex-Neuroscientist, Designer &amp; Developer.</span>
-
-            </a>
-
-            <ul class="nav social">
-                <li class="github"></li>
-                <li class="dribble"></li>
-                <li class="twitter"></li>
-                <li class="linkedin"></li>
-                <li class="heyday"></li>
-            </ul>
-
-            <ul class="nav basic">
-              <li><a href="#portofolio">Portofolio</a></li>
-              <li><a href="#blog">Blog</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-
-      </div> <!-- navbar-inner -->
-    </div> <!-- navbar -->
-</nav>
+{% include theme("navigation.html", False) %}
 
 <div class="content" id="content">
 	<div class="container">
@@ -70,10 +33,4 @@
         <h2 id="contact">Contact</h2>
 	</div> <!-- container -->
 </div> <!-- content -->
-
-<script src="{{ theme_static('js/jquery.min.js') }}"></script>
-<script src="{{ theme_static('js/bootstrap.min.js') }}"></script>
-<script src="{{ theme_static('js/bootstrap-modal.js') }}"></script>
-<script src="{{ theme_static('js/bootstrap-modalmanager.js') }}"></script>
-<script src="{{ theme_static('js/portwem.js') }}"></script>
-</body>
+{% endblock %}

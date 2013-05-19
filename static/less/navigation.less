@@ -1,4 +1,4 @@
-
+.mobile-brand {display: none;}
 div.navbar
     {
     background: rgb(25,25,25);
@@ -130,7 +130,8 @@ div.navbar
             }
     }
 
-body.fixnav div.navbar div.navbar-inner ul.social li:hover
+body.fixnav div.navbar div.navbar-inner ul.social li:hover,
+body.nohead div.navbar div.navbar-inner ul.social li:hover
     {
     &:before
         {
@@ -157,7 +158,41 @@ body.fixnav div.navbar div.navbar-inner ul.social li:hover
         margin: 0px;
         padding: 0px;
         }
-    span.whatido, ul.nav.social
+    nav .navbar .navbar-inner
+        {
+        ul.basic {float: none; text-align: center;}
+        ul.basic li {float: none; display: inline;}
+        ul.basic li a
+            {
+            font-size: 1.5em;
+            line-height: 40px !important;
+            height: 40px !important;
+            }
+        line-height: 40px !important;
+        height: 40px !important;
+        }
+    .nohaed .mobile-brand
+        {
+        display: block;
+        line-height: 1em;
+        background-color: @red;
+        padding: 21px;
+        a
+            {
+            color: transparent;
+            text-indent: -1000em;
+            background: url(../bin/name.png) center center no-repeat @red;
+            background-size: 196px 18px;
+            width: 196px;
+            height: 18px;
+            display: block;
+            margin: 0px auto;
+            }
+        // height: 60px;
+
+        margin: 0px;
+        }
+    span.whatido, ul.nav.social, #brand
         {
         display: none;
         }
@@ -167,9 +202,11 @@ body.fixnav div.navbar div.navbar-inner ul.social li:hover
         padding: 0px 0px 0px 20px;
         font-size: 30px;
         }
+    nav
+        {margin-bottom: 5em !important;}
     }
 
-body.fixnav
+body.fixnav, body.nohaed
     {
     margin-top: 20px;
     div.navbar
@@ -187,4 +224,8 @@ body.fixnav
         {
         margin-top: 40px;
         }
+    }
+nav.container
+    {
+    max-width: 100%;
     }

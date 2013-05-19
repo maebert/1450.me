@@ -1,0 +1,38 @@
+{% extends theme("base.html", False) %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ theme_static('css/prism.css') }}" />
+{% endblock%}
+{% block bodyclass %}nohaed{% endblock %}
+{% block body %}
+{% include theme("navigation.html", False) %}
+
+<div class="content" id="content">
+    <article class="container language-python">
+
+        <h2>{{ article.title }}</h2>
+        <div class="meta">
+            Posted <date>{{ article.created.strftime("%d %b %Y") }}</date>
+            in <span class="tags">
+                {% if article.tags|length > 1 %}
+                    {% for tag in article.tags[:-1] %}
+                    <span class="badge tag">{{ tag }}</span>
+                    {% endfor %}
+                    and <span class="badge tag">{{ article.tags[-1] }}</span>
+                {% else %}
+                    <span class="badge tag">{{ article.tags[0] }}</span>
+                {% endif %}
+            </span>
+        </div>
+         {% if article.tags %}
+        {% endif %}
+
+        {{ article.content|markdown }}
+
+        <div class="twitterlink">
+            <a  href="http://twitter.com/share?url={{ article.full_url|urlencode }}&text={{ article.title }}&via=maebert" class="button"><i></i>Discuss this article on twitter.</a>
+        </div>
+
+    </article> <!-- container -->
+</div> <!-- content -->
+<script src="{{ theme_static('js/prism.js') }}"></script>
+{% endblock %}
