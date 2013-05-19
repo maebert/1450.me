@@ -16,7 +16,7 @@
         <h2 id="portofolio">Portofolio</h2>
 
         <div class="portofolio-container">
-            {% for entry in site.articles(category="portofolio") %}
+            {% for entry in site.articles(category="portofolio")|sort(attribute='created', reverse=True) %}
                 {% include theme('portofolio-entry.html', False) %}
             {% endfor %}
         </div>
@@ -24,7 +24,7 @@
         <h2 id="blog">Blog</h2>
 
         <div class="blog-container">
-            {% for entry in site.articles(category="blog") %}
+            {% for entry in site.articles(category="blog")|sort(attribute='created', reverse=True) %}
                 {% include theme('preview.html', False) %}
             {% endfor %}
 
