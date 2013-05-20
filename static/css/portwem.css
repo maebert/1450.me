@@ -18,6 +18,13 @@ h4,
 .tag {
   font-family: "junction", "Junction Regular" "Helvetica Neue", Helvetica, Arial, Sans-Serif;
 }
+a {
+  color: #883120;
+  text-decoration: none;
+}
+a:hover {
+  color: #ef684e;
+}
 body {
   margin: 0px;
   background: url(../bin/background.png) top left repeat #ef684e;
@@ -32,7 +39,7 @@ body {
 h2 {
   font-family: "junction", "Junction Regular" "Helvetica Neue", Helvetica, Arial, Sans-Serif;
   text-align: center;
-  margin: 40px 0px 40px 0px;
+  margin: 1em 0px;
   color: #2d2c27;
   font-size: 2.666em;
 }
@@ -80,6 +87,31 @@ header #goggleLeft {
 header #goggleRight {
   background: url(../bin/goggle-r.png) 0px 0px no-repeat transparent;
   left: 144px;
+}
+@media screen and (max-width: 768px) {
+  header .avatar {
+    width: 145px;
+    height: 140px;
+    background-size: 132px 135px;
+  }
+  header #goggleLeft,
+  header #goggleRight {
+    width: 46px;
+    height: 32px;
+    top: 57px;
+    background-size: 46px 32px;
+  }
+  header #goggleLeft {
+    left: 28px;
+  }
+  header #goggleRight {
+    left: 72px;
+  }
+  header #name {
+    background-size: 128px 12px;
+    padding-top: 16px;
+    font-size: 9.5px;
+  }
 }
 .container {
   width: 100%;
@@ -185,18 +217,9 @@ header #goggleRight {
 }
 .blog-container,
 article.container {
-  max-width: 640px;
-  margin: 0 auto 2em auto;
   padding-top: 4em;
-}
-.blog-container a,
-article.container a {
-  color: #883120;
-  text-decoration: none;
-}
-.blog-container a:hover,
-article.container a:hover {
-  color: #ef684e;
+  margin: 0 auto 2em auto;
+  max-width: 640px;
 }
 .blog-container img,
 article.container img,
@@ -229,7 +252,7 @@ article.container pre {
 .blog-container div.meta,
 article.container div.meta {
   color: #a4a48e;
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: center;
   margin-bottom: 2em;
 }
@@ -249,6 +272,17 @@ article.container div.twitterlink a {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+}
+.blog-container div.twitterlink a i,
+article.container div.twitterlink a i {
+  background: url(../bin/social.png) 0px -40px no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 4px 4px 0;
+  background-position: -160px center;
+  height: 40px;
+  width: 40px;
+  background-size: 560px 40px;
 }
 .blog-container div.twitterlink a:hover,
 article.container div.twitterlink a:hover {
@@ -302,12 +336,35 @@ article.container div.preview h3 a {
 article.container div.preview h3 a:hover {
   color: #883120;
 }
+.blog-container {
+  padding: 0em;
+  margin: 0 auto;
+}
+aside.next {
+  max-width: 640px;
+  opacity: 0.7;
+  filter: alpha(opacity= 70 );
+  margin: 2em auto;
+  border-top: 1px solid #a4a48e;
+  padding-top: 1em;
+  display: block;
+  font-size: 1.5em;
+}
+aside.next summary {
+  line-height: 1.5em;
+}
 @media (max-width: 768px) {
   div#content {
     margin-top: 0em;
   }
   article.container {
-    padding-top: 0;
+    padding-top: 1em;
+  }
+  article.container div.twitterlink a i {
+    background-position: -80px center;
+    height: 20px;
+    width: 20px;
+    background-size: 280px 20px;
   }
   .blog-container div.preview {
     margin-bottom: 1.5em;
@@ -604,6 +661,9 @@ body.nohaed {
 body.fixnav #brand,
 body.nohaed #brand {
   margin-left: 0px;
+}
+body.fixnav {
+  margin-top: 60px;
 }
 nav.container {
   max-width: 100%;
