@@ -1,7 +1,9 @@
 <html>
 <head>
-    <title>{% block title %}{% endblock %}</title>
-    <description>{% block synopsis %}{% endblock %}</description>
+    <title>{% if title %}{% block title %}{% endblock %} (1450.me){% else %}1450.me{% endif %}</title>
+    <meta name="description" content="{% block description %}{% endblock %}">
+    <meta name="keywords" content="Manuel Ebert, design, programming, development, portwem preludium, portwem{% block keywords %}{% endblock %}">
+    <meta name="author" content="Manuel Ebert">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{{ theme_static('bin/favicon.png') }}" />

@@ -1,4 +1,7 @@
 {% extends theme("base.html", False) %}
+{% block title %}{{ article.title }}{% endblock %}
+{% block description %}{{ article.description }}{% endblock %}
+{% block keywords %}, {{ article.tags|join(", ") }}{% endblock %}
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{{ theme_static('css/prism.css') }}" />
 {% endblock%}
