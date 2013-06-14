@@ -1,6 +1,7 @@
 {% extends theme("base.html", False) %}
 {% block bodyclass %}landing{% endblock %}
 {% block body %}
+
 <header>
     <div class="avatar">
         <div id="goggleLeft"></div>
@@ -13,11 +14,11 @@
 <div class="content" id="content">
 	<div class="container">
 
-        <h2 id="portofolio">Portofolio</h2>
+        <h2 id="portfolio">Portfolio</h2>
 
         <div class="portofolio-container">
-            {% for entry in site.articles(category="portofolio")|sort(attribute='created', reverse=True) %}
-                {% include theme('portofolio-entry.html', False) %}
+            {% for entry in site.articles(category="portfolio")|sort(attribute='created', reverse=True) %}
+                {% include theme('portfolio-entry.html', False) %}
             {% endfor %}
         </div>
 
@@ -27,10 +28,15 @@
             {% for entry in site.articles(category="blog")|sort(attribute='created', reverse=True) %}
                 {% include theme('preview.html', False) %}
             {% endfor %}
-
         </div>
 
-        <h2 id="contact">Contact</h2>
+        <h2 id="about">About</h2>
+
+        <article class="about container">
+            {% for entry in site.articles(category="about") %}
+                {{ entry.content|markdown }}
+            {% endfor %}
+        </article>
 	</div> <!-- container -->
 </div> <!-- content -->
 {% endblock %}
