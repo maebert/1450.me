@@ -4,5 +4,14 @@
     "name": "Portwem Preludium",
     "author": "Manuel Ebert",
     "license": "Creative Commons Non-Commercial Share-Alike",
-    "description": "Theme for 1450.me"
+    "description": "Theme for 1450.me",
+    "custom_fields": {
+        "Article": {
+            "color": "Color",
+            "backgroundcolor": "Color",
+            "cover": ["Image", "Thumbnail"],
+            "tags": "Tags",
+            "external_url": ["String", "URL"]
+        }
+    }
 }

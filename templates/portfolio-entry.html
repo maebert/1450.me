@@ -1,10 +1,12 @@
-<div class="portofolio-tile" data-source="{{entry.category}}/{{entry.slug}}.html" style="background-image: url({{ entry.cover}}); {% if entry.backgroundcolor %}background-color: {{entry.backgroundcolor}};{% endif%}">
+<a href="{{ entry.external_url or entry.url }}" {% if entry.external_url %}target="_blank"{% endif %} title="{{ entry.title }}">
+<div class="portofolio-tile" style="background-image: url({{ entry.cover }}); {% if entry.backgroundcolor %}background-color: {{entry.backgroundcolor}};{% endif%}">
     <div class="description" style="{% if entry.backgroundcolor %}background-color: {{entry.backgroundcolor}};{% endif%} {% if entry.color %}color: {{entry.color}};{% endif%}">
         <h3>{{ entry.title }}</h3>
         <div class="tags">
             {% for tag in entry.tags %}
-            <span class="badge tag">{{ tag }}</span>
-            {%endfor%}
+            <span class="badge tag" style="{% if entry.backgroundcolor %}color: {{entry.backgroundcolor}};{% endif%} {% if entry.color %}background-color: {{entry.color}};{% endif%}" >{{ tag }}</span>
+            {% endfor %}
         </div>
     </div>
 </div>
+</a>
