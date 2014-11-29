@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Manuel Ebert</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="{% static '/static/css/main.css' %}">
+        <script src="{% static '/static/js/vendor/modernizr-2.6.2.js' %}"></script>
+    </head>
+
+    <body>
+      <header>
+        <div class="centering">
+          <h1><span class="first">Manuel</span> <span class="last">Ebert</span></h1>
+          <h2>Designer, Developer, Nomad <span class="and">&amp;</span> Neuroscientist&nbsp;&nbsp;</h2>
+          <ul id="social">
+            <li><a class="mail" href="mailto:manuel@1450.me"></a></li>
+            <li><a class="github" href="https://github.com/maebert"></a></li>
+            <li><a class="twitter" href="https://twitter.com/maebert"></a></li>
+            <li><a class="dribbble" href="https://dribbble.com/maebert"></a></li>
+            <li><a class="linkedin" href="https://linkedin.com/maebert"></a></li>
+          </ul>
+      </div>
+      </header>
+      <section id="projects">
+        <h3>I'm a <span class="white">full-stack</span> engineer and  <span class="white">designer</span>.</h3>
+        <div class="columns3">
+        {% for post in projects %}
+          <a href="{{ post.url }}" class='blocklink'>
+          <article class="blog">
+            <div class="cover" style="background-image: url({% static post.cover %}); background-size: {% if post.bg %} contain {% else %} cover {%endif%}; background-color: #{{ post.bg }}"></div>
+            <div class="content">
+              <h4>{{ post.title }}</h4>
+              <p>{{ post.body }}</p>
+            </div>
+          </article>
+          </a>
+        {% endfor %}
+
+
+      </section>
+      <section id="blog">
+        <h3>I <span class="white">write</span> about things.</h3>
+        <div class="columns2">
+        {% for post in blog %}
+          <a href="{{ post.url }}" class='blocklink'>
+          <article class="blog">
+            <div class="cover" style="background-image: url({% static post.cover %}); background-size: {% if post.bg %} contain {% else %} cover {%endif%}; background-color: #{{ post.bg }}"></div>
+            <div class="content">
+              <h4>{{ post.title }}</h4>
+              <p>{{ post.body }}</p>
+            </div>
+          </article>
+          </a>
+        {% endfor %}
+      </section>
+      </div>
+
+      <section id="map">
+        <h3>I'm a <span class="white">nomad</span>.</h3>
+        <ul class="map">
+          <li data-name="Tokyo" data-x="103" data-y="26" data-date="July 5 - August 5" class='city'></li>
+          <li data-name="Berlin" data-x="60" data-y="19" data-date="May 29 - July 4" class='city'></li>
+          <li data-name="Edinburgh" data-x="55" data-y="17" data-date="Aug 14 - Aug 19" class='city'></li>
+          <li data-name="Black Rock City" data-x="18" data-y="23" data-date="Aug 20 - Sep 01" class='city'></li>
+          <li data-name="San Francisco" data-x="15" data-y="25" data-date="Sep 02 - Oct 20" class='city'></li>
+          <li data-name="Oslo" data-x="60" data-y="14" data-date="Oct 20 - Oct 23" class='city'></li>
+          <li data-name="Barcelona" data-x="56" data-y="24" data-date="Oct 23 - Nov 14" class='city'></li>
+          <li data-name="Phuket" data-x="88" data-y="37" data-date="Current location" class='current city'></li>
+        </ul>
+
+      </section>
+      <footer>
+        Made by Manuel Ebert.
+          <ul id="social">
+            <li><a class="mail" href="mailto:manuel@1450.me"></a></li>
+            <li><a class="github" href="https://github.com/maebert"></a></li>
+            <li><a class="twitter" href="https://twitter.com/maebert"></a></li>
+            <li><a class="dribbble" href="https://dribbble.com/maebert"></a></li>
+            <li><a class="linkedin" href="https://linkedin.com/maebert"></a></li>
+          </ul>
+
+      </footer>
+      <script src="{% static '/static/js/main.js' %}"></script>
+    </body>
+
+</html>
