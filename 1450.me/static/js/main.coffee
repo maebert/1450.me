@@ -6,6 +6,8 @@ document.addEventListener "DOMContentLoaded", ->
   header_rect = header_inner.getBoundingClientRect()
 
   was_in_zone = false
+  @waiting_for_frame = false
+  @waiting_for_goggle_frame = false
 
   clamp = (v) ->
     Math.max Math.min(v, 1.0), 0.0
@@ -23,7 +25,8 @@ document.addEventListener "DOMContentLoaded", ->
   if window.DeviceOrientationEvent?
       ma = moving_average 10
       @inital_motion = "none"
-      window.ondevicemotion = (event) =>
+      update_wiggle = (event) =>
+        @waiting_for_google_frame = false
         acc = event.accelerationIncludingGravity.z
         if @inital_motion is "none"
           @inital_motion = acc
@@ -35,6 +38,11 @@ document.addEventListener "DOMContentLoaded", ->
           if percent > 1
             @inital_motion = avg + 3
           goggles clamp percent
+
+      window.ondevicemotion = (event) =>
+        if not @waiting_for_google_frame
+          requestAnimationFrame -> update_wiggle(event)
+          @waiting_for_google_frame = true
 
   goggles = (percent) ->
       $left = document.getElementById "goggleLeft"
@@ -52,7 +60,14 @@ document.addEventListener "DOMContentLoaded", ->
       $right.style.oTransform = "scaleY(#{1 - 0.25 * percent}) rotate(#{20 * percent}deg)"
       $right.style.transform = "scaleY(#{1 - 0.25 * percent}) rotate(#{20 * percent}deg)"
 
-  scroll = ->
+  scroll = =>
+    [last_scroll, last_height] = [window.scrollY, window.innerHeight]
+    if last_scroll < last_height and not @waiting_for_frame
+      requestAnimationFrame update_scroll
+      @waiting_for_frame = true
+
+  update_scroll = =>
+    @waiting_for_frame = false
     header_height = header_rect.bottom - header_rect.top
     # consoe.log "Header #{header_height} window #{windo}
     padding = (window.innerHeight - header_height) / 2
@@ -61,7 +76,6 @@ document.addEventListener "DOMContentLoaded", ->
       goggles clamp px*2
       header_inner.style.marginTop = "#{(1 + px*2) * padding}px"
       header_lower.style.opacity = 1 - px
-
 
   resize = ->
     scroll()
