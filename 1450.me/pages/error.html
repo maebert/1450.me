@@ -1,26 +1,38 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>1450.me - Manuel Ebert</title>
+        <meta name="description" content="">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="{% static '/static/images/favicon.png' %}">
+        <link rel="stylesheet" href="{% static '/static/css/main.css' %}">
+    </head>
 
-{% block body %}
-<div class="jumbotron">
-  <div class="container">
-    <h1>We're sorry!</h1>
-    <p>The page <b id="url"></b> could not be found on this server.</p>
-  </div>
-</div>
-{% endblock body %}
+    <body>
+      <header>
+        <div class="centering" id="header_inner">
+          <div class="avatar" id="avatar">
+          <div id="goggleLeft"></div>
+          <div id="goggleRight"></div>
+          </div>
+          <hgroup id="header_lower">
+            <h1>&nbsp;&nbsp;&nbsp;&nbsp;Oooops...</h1>
+            <h2>So, I couldn't find <b id="url" class="white"></b> here. You probably broke it.</h2>
+          </hgroup>
+        </div>
+      </header>
+      <script src="{% static '/static/js/main.js' %}"></script>
 
-{% block scripts %}
-  <script type="text/javascript" charset="utf-8">
-    $(document).ready(function() {
-
-      // Add the missing url to the text
-      $("#url").text(window.location.pathname);
-
-      // Fix the css locations dynamically
-      $("head link").each(function() {
-        for (var i=0; i<window.location.pathname.split(/\//g).length-2; i++)
-          $(this).attr("href", "../" + $(this).attr("href"));
+    <script type="text/javascript" charset="utf-8">
+      document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("url").innerHTML = window.location.pathname
+        $("head link").each(function() {
+          for (var i=0; i<window.location.pathname.split(/\//g).length-2; i++)
+            $(this).attr("href", "../" + $(this).attr("href"));
+        });
       });
-    })
-  </script>
-{% endblock %}
+    </script>
+</body></html>
