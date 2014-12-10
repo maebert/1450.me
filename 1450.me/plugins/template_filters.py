@@ -11,5 +11,4 @@ def current_page_name(context):
 
     return page.final_url
 
-print "REGISTERING SIMPLE FUKING TAG"
 register.simple_tag(takes_context=True)(current_page_name)
