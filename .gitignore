@@ -1,4 +1,4 @@
 .DS_Store
 *.pyc
-1450.me/.build/*
-1450.me/.deploy/*
+.build/*
+.deploy/*
