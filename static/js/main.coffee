@@ -8,6 +8,13 @@ document.addEventListener "DOMContentLoaded", ->
   was_in_zone = false
   @waiting_for_frame = false
   @waiting_for_goggle_frame = false
+  arcs = [
+    [103, 26, 60, 19],
+    [55, 17, 18, 23],
+    [14, 25, 60, 14],
+    [60, 14, 56, 24],
+    [56, 24, 88, 37]
+  ]
 
   clamp = (v) ->
     Math.max Math.min(v, 1.0), 0.0
@@ -147,26 +154,24 @@ document.addEventListener "DOMContentLoaded", ->
     y = el.getAttribute('data-y') * 9 - 5
     el.style.top  = y + "px"
     el.innerHTML = "<div class='tooltip-wrap'><div class='tooltip'><div class='date'>"+el.getAttribute('data-date')+"</div><div class='name'>"+el.getAttribute('data-name')+"</div></div></div>"
-    if lastX?
-      d = Math.sqrt(Math.pow(lastX - x, 2) + Math.pow(lastY - y, 2))
-      if d > 70
-        right = lastX < x
-        ydiff = Math.abs(lastX - x) / 3
-        rot = -180 / Math.PI * (Math.atan2(lastX - x, lastY - y) + .5 * Math.PI )
-        extra_arc = 35 - (y - lastY) / 3
-        rot = if right then rot - extra_arc else rot + extra_arc
-        plane_data[plane_id] =
-          right: right
-          ydiff: ydiff
-          rot: rot
-          extra_arc: extra_arc
-          left: if right then lastX - x else lastX - x - ydiff
-          top: lastY - y - ydiff
-          in_flight: false
-        plane = "<div class='plane-wrapper' id='plane#{plane_id}' style='left: #{plane_data[plane_id]["left"]}px; top: #{plane_data[plane_id]["top"]}px;  width: #{ydiff}px; height: #{ydiff}px'><div class='#{if right then "right" else "left"}' style='-webkit-transform: rotate(#{rot}deg)'></div></div>"
-        el.setAttribute "plane_id", plane_id
-        el.innerHTML += plane
+    if lastX? and el.className.indexOf("nofly") == -1
+      right = lastX < x
+      ydiff = Math.abs(lastX - x) / 3
+      rot = -180 / Math.PI * (Math.atan2(lastX - x, lastY - y) + .5 * Math.PI )
+      extra_arc = 35 - (y - lastY) / 3
+      rot = if right then rot - extra_arc else rot + extra_arc
+      plane_data[plane_id] =
+        right: right
+        ydiff: ydiff
+        rot: rot
+        extra_arc: extra_arc
+        left: if right then lastX - x else lastX - x - ydiff
+        top: lastY - y - ydiff
+        in_flight: false
+      plane = "<div class='plane-wrapper' id='plane#{plane_id}' style='left: #{plane_data[plane_id]["left"]}px; top: #{plane_data[plane_id]["top"]}px;  width: #{ydiff}px; height: #{ydiff}px'><div class='#{if right then "right" else "left"}' style='-webkit-transform: rotate(#{rot}deg)'></div></div>"
+      el.setAttribute "plane_id", plane_id
+      el.innerHTML += plane
 
-        plane_id += 1
+      plane_id += 1
     [lastX, lastY] = [x, y]
   schedule_flight()
