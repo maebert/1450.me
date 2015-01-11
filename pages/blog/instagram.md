@@ -1,7 +1,7 @@
 title: Solving the Instagram Engineering Challenge
 draft: true
 date: 2012-07-30
-cover: instragram.jpg
+cover: instagram.jpg
 preview: The folks at Instagram posed an interesting challenge: Basically, your task was to take an shredded image and undo the random shredding process with a few lines of code in a language of your choice. In their blog post, they wrote it took them 150 lines of code in python. So I thought a reasonable challenge would be be to solve the task in 15 lines of code.
 ---
 
