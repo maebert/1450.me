@@ -4,4 +4,4 @@ cover: heyday.jpg
 url: http://www.hey.co
 ---
 
-Heyday is your auto-auto-biography. I do UX design, back-end and web engineering for the small San Francisco based startup.
+Heyday is your auto-auto-biography. I did UX design and created the back-end and web front-end for the small San Francisco based startup.
