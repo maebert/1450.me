@@ -1,7 +1,10 @@
+from markdown import markdown
+
 ORDER = 999
 BLOG_PATH = 'blog/'
 PROJECT_PATH = 'projects/'
 POSTS = []
+
 
 def load_post(path):
     def parse_value(value):
@@ -15,10 +18,14 @@ def load_post(path):
             return True
         if value.strip().lower() == "false":
             return False
-        try: return int(value)
-        except ValueError: pass
-        try: return float(value)
-        except ValueError: pass
+        try:
+            return int(value)
+        except ValueError:
+            pass
+        try:
+            return float(value)
+        except ValueError:
+            pass
         if value == "[]":
             return []
         elif value.startswith("["):
@@ -28,16 +35,17 @@ def load_post(path):
             return value.strip()
 
     with open(path) as f:
-        front_matter, body = f.read().split("---")
+        front_matter, body = f.read().decode('utf-8').split("---")
         result = {'body': body}
-        print "PATH:", path
         for line in front_matter.splitlines():
             key, value = line.split(":", 1)
             result[key.strip()] = parse_value(value)
         return result
 
+
 def ampersandise(text):
     return text.replace(" & ", " <span class='amp'>&amp;</span> ")
+
 
 def preBuild(site):
 
@@ -50,12 +58,12 @@ def preBuild(site):
             post['path'] = page.path
             post['category'] = 'blog' if page.path.startswith(BLOG_PATH) else 'projects'
             post['cover'] = '/static/covers/' + post['cover']
-            post['preview'] =  post.get('preview') or post['body']
-            post['body'] =  ampersandise(post['body'])
-            post['title'] =  ampersandise(post['title'])
-            post['preview'] =  ampersandise(post['preview'])
+            post['preview'] = post.get('preview') or post['body']
+            post['body'] = ampersandise(post['body'])
+            post['title'] = ampersandise(post['title'])
+            post['preview'] = ampersandise(markdown(post['preview']))
             if not post.get('draft'):
-	            POSTS.append(post)
+                POSTS.append(post)
 
     # Sort the posts by date
     POSTS = sorted(POSTS, key=lambda x: x['date'])
@@ -64,8 +72,10 @@ def preBuild(site):
     indexes = xrange(0, len(POSTS))
 
     for i in indexes:
-        if i+1 in indexes: POSTS[i]['prevPost'] = POSTS[i+1]
-        if i-1 in indexes: POSTS[i]['nextPost'] = POSTS[i-1]
+        if i + 1 in indexes:
+            POSTS[i]['prevPost'] = POSTS[i + 1]
+        if i - 1 in indexes:
+            POSTS[i]['nextPost'] = POSTS[i - 1]
 
 
 def preBuildPage(site, page, context, data):
