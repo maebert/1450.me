@@ -607,6 +607,7 @@ ul#social a.github {
   -webkit-transition: all .1s linear;
   transition: all .1s linear;
   opacity: 0;
+  -webkit-backface-visibility: hidden;
 }
 #work a:hover .preview:after {
   -webkit-transform: scale(1);
@@ -615,6 +616,7 @@ ul#social a.github {
 }
 #work .icon,
 #work .preview {
+  -webkit-backface-visibility: hidden;
   background: url(../img/icons.png) 0px 0px no-repeat transparent;
   width: 76px;
   height: 76px;
