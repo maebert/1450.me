@@ -22,6 +22,81 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/for\/b\/1.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 29298,
+		"inputAbbreviatedPath": "\/for\/b\/1.png",
+		"outputAbbreviatedPath": "\/for\/b\/1.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/for\/b\/2.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 30634,
+		"inputAbbreviatedPath": "\/for\/b\/2.png",
+		"outputAbbreviatedPath": "\/for\/b\/2.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/for\/b\/3.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 30164,
+		"inputAbbreviatedPath": "\/for\/b\/3.png",
+		"outputAbbreviatedPath": "\/for\/b\/3.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/for\/b\/4.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 20113,
+		"inputAbbreviatedPath": "\/for\/b\/4.png",
+		"outputAbbreviatedPath": "\/for\/b\/4.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/for\/b\/key.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3159,
+		"inputAbbreviatedPath": "\/for\/b\/key.png",
+		"outputAbbreviatedPath": "\/for\/b\/key.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/for\/b\/screws.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4988,
+		"inputAbbreviatedPath": "\/for\/b\/screws.png",
+		"outputAbbreviatedPath": "\/for\/b\/screws.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/for\/kari.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/for\/kari.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/img\/header.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -169,7 +244,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 385081,
+		"initialSize": 684668,
 		"inputAbbreviatedPath": "\/img\/talks.png",
 		"outputAbbreviatedPath": "\/img\/talks.png",
 		"outputPathIsOutsideProject": 0,

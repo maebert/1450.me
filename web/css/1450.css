@@ -460,9 +460,9 @@ p.copyright {
           column-count: 3;
 }
 .row.talks {
-  -webkit-column-count: 4;
-     -moz-column-count: 4;
-          column-count: 4;
+  -webkit-column-count: 3;
+     -moz-column-count: 3;
+          column-count: 3;
 }
 ul#social {
   list-style: none;
@@ -634,7 +634,7 @@ ul#social a.github {
   background: url(../img/talks.png) 0px 0px no-repeat transparent;
   width: 190px;
   height: 110px;
-  background-size: 190px 440px;
+  background-size: 190px 550px;
   position: relative;
 }
 #work .preview.pycon {
@@ -648,6 +648,9 @@ ul#social a.github {
 }
 #work .preview.centaurs {
   background-position: 0px -330px;
+}
+#work .preview.hybridai {
+  background-position: 0px -440px;
 }
 #work .summer .icon {
   background-position: 0px 0px;
