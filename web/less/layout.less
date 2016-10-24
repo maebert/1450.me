@@ -1,6 +1,7 @@
 .container {
     position: relative;
     max-width: 960px;
+    width: 100%;
     margin: 0 auto;
     padding: 0px;
     box-sizing: border-box;
@@ -9,13 +10,16 @@
 
 .block
     {
-    display: inline-block;
+    display: block;
     column-break-inside: avoid;
+    // margin-bottom: 20px;
     page-break-inside: avoid;
     break-inside: avoid;
     overflow: hidden;
     }
 
-.row.media { column-count: 3; }
-.row.work { column-count: 3; }
-.row.talks { column-count: 3; }
+.row.media, .row.work, .row.talks
+    {
+    column-count: 3;
+    column-gap: 20px;
+    }

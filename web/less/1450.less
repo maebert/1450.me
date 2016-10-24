@@ -110,16 +110,24 @@
         }
     }
 
+body, html
+    {
+    // overflow-x: hidden;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    }
 
 /* Larger than desktop */
 @media (max-width: 1080px)
     {
-    .container { padding: 0 40px;}
+    .container { margin: 0px 0px; padding: 0px 20px;}
     }
 @media (max-width: 920px)
     {
     .row.talks { column-count: 2; }
     }
+
 @media (max-width: 680px)
     {
     html { font-size: 50.0%; }
@@ -133,12 +141,19 @@
     #work .title { height: auto; h3 { position: relative;}}
 
     }
+
 @media (max-width: 540px)
     {
     #hero
         {
-        height: 520px;
-        padding-top: 300px;
+        position: relative;
+        .container
+            {
+            padding: 0 20px;
+            position: absolute;
+            bottom: 15px;
+            }
+        height: 540px;
         h1 { font-size: 3rem; }
         p.tagline {margin-bottom: 20px; font-size: 2.0rem}
         p.hello
@@ -146,7 +161,6 @@
             margin-top: 0px;
             width: 100%;
             }
-        // h1 {margin-bottom: 130px;}
         }
     p { font-size: 2rem;}
     h3 { font-size: 2.4rem; }

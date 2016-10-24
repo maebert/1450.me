@@ -437,32 +437,28 @@ p.copyright {
 .container {
   position: relative;
   max-width: 960px;
+  width: 100%;
   margin: 0 auto;
   padding: 0px;
   box-sizing: border-box;
 }
 .block {
-  display: inline-block;
+  display: block;
   column-break-inside: avoid;
   page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
           break-inside: avoid;
   overflow: hidden;
 }
-.row.media {
-  -webkit-column-count: 3;
-     -moz-column-count: 3;
-          column-count: 3;
-}
-.row.work {
-  -webkit-column-count: 3;
-     -moz-column-count: 3;
-          column-count: 3;
-}
+.row.media,
+.row.work,
 .row.talks {
   -webkit-column-count: 3;
      -moz-column-count: 3;
           column-count: 3;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
 }
 ul#social {
   list-style: none;
@@ -545,6 +541,7 @@ ul#social a.github {
   color: white;
   max-width: 50%;
   padding-left: 16px;
+  box-sizing: border-box;
   letter-spacing: 0px;
   text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.65);
 }
@@ -670,10 +667,17 @@ ul#social a.github {
 #work .jrnl h3 {
   color: #624686;
 }
+body,
+html {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
 /* Larger than desktop */
 @media (max-width: 1080px) {
   .container {
-    padding: 0 40px;
+    margin: 0px 0px;
+    padding: 0px 20px;
   }
 }
 @media (max-width: 920px) {
@@ -715,8 +719,13 @@ ul#social a.github {
 }
 @media (max-width: 540px) {
   #hero {
-    height: 520px;
-    padding-top: 300px;
+    position: relative;
+    height: 540px;
+  }
+  #hero .container {
+    padding: 0 20px;
+    position: absolute;
+    bottom: 15px;
   }
   #hero h1 {
     font-size: 3rem;
