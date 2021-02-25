@@ -1,0 +1,37 @@
+
+ul#social
+    {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 8px;
+    text-align: left;
+    li
+        {
+        display: inline-block;
+        margin: 0 6px;
+        }
+    a
+        {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background: url(../img/social.png) 0px 0px no-repeat;
+        background-size: 150px 30px;
+        opacity: .4;
+        border-radius: 50%;
+        box-shadow: 2px 2px 4px rgba(0,0,0,.2);
+        transform: scale(1);
+        transition: all .1s ease-out;
+        &:hover
+            {
+            box-shadow: 0px 3px 12px rgba(0,0,0,.4);
+            opacity: 1;
+            transform: scale(1.2);
+            }
+        &.twitter  { background-position: 0px 0; }
+        &.linkedin { background-position: -30px 0; }
+        &.dribbble { background-position: -60px 0; }
+        &.mail     { background-position: -90px 0; }
+        &.github   { background-position: -120px 0; }
+       }
+    }
