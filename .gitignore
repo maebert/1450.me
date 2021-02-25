@@ -3,3 +3,4 @@
 .build/*
 .deploy/*
 web/for
+node_modules
