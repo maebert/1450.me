@@ -197,11 +197,11 @@ p {
 }
 
 .media img {
-  max-width: 120px;
-  opacity: 0.5;
+  /* max-width: 120px; */
+  opacity: 0.65;
   margin: 0 2px;
   line-height: 2rem;
-  max-height: 2rem;
+  max-height: 1.4rem;
   vertical-align: middle;
   transition: all 0.1s ease-in;
 }
@@ -245,6 +245,6 @@ p.copyright {
 
   .media img {
     max-width: 80px;
-    max-height: 1.5rem;
+    max-height: 1.3rem;
   }
 }
