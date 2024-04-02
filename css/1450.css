@@ -120,6 +120,7 @@ a:link,
 a:visited {
   color: inherit;
   text-decoration: underline dashed #a8a6b9;
+  -webkit-text-decoration: underline dashed #a8a6b9;
   text-decoration-thickness: 0.04em;
   text-underline-offset: 0.1em;
   transition: all 0.1s ease-in;
@@ -132,6 +133,7 @@ a:active {
 h1 a:link,
 h1 a:visited {
   text-decoration: underline dashed #636174;
+  -webkit-text-decoration: underline dashed #636174;
 }
 
 h1 a:hover,
@@ -145,6 +147,7 @@ h2 a:visited,
 h3 a:link,
 h3 a:visited {
   text-decoration: underline dashed #a19fb3;
+  -webkit-text-decoration: underline dashed #a19fb3;
 }
 
 h2 {
