@@ -11,11 +11,17 @@ h1 {
   font-size: 6rem;
   line-height: 135%;
   color: #353440;
-  margin-top: 80pt;
 }
 
 .container {
-  padding: 0 80pt 0 40pt;
+  padding: 0pt 8rem 0 6rem;
+}
+
+.menu {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin: 6rem 0;
 }
 
 .pin {
@@ -243,7 +249,19 @@ p.copyright {
   }
 
   .container {
-    padding: 0 20pt 0 10pt;
+    padding: 0 1rem;
+  }
+  .menu {
+    font-size: 0.8rem;
+    margin: 2rem 0 1rem 0;
+    background: #e9ebed;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    display: inline-block;
+    border-radius: 2rem;
+  }
+  .menu #logo {
+    height: 1rem;
+    vertical-align: middle;
   }
 
   .media img {
