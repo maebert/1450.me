@@ -2,6 +2,7 @@ body {
   background-color: #f5f6f7;
   font-family: "Montserrat";
   color: #63617a;
+  font-size: 1.2rem;
 }
 
 h1 {
@@ -11,6 +12,32 @@ h1 {
   font-size: 6rem;
   line-height: 135%;
   color: #353440;
+}
+
+h2 {
+  margin-top: 20pt;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 3rem;
+  line-height: 140%;
+  color: #63617a;
+}
+
+h3 {
+  margin-top: 12pt;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 140%;
+  color: #63617a;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  margin: 2rem 0;
 }
 
 .container {
@@ -68,12 +95,28 @@ a:hover .pin.large {
 .pin.ubique {
   background: linear-gradient(180deg, #f8da7c 0%, #f6c11e 100%);
 }
+.pin.substack {
+  background: url(../img/substack.png) center center no-repeat,
+    linear-gradient(180deg, #ff404a 0%, #c41357 100%);
+  background-size: cover;
+}
 
 .pin.ubique:before {
   content: "U";
   color: #273645;
   font-weight: 900;
   font-size: 0.8em;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  line-height: 1.4em;
+}
+.pin.email:before {
+  content: "@";
+  color: white;
+  font-weight: 900;
+  font-size: 0.6em;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -121,6 +164,9 @@ a:hover .pin.large {
 .pin.todo {
   background: linear-gradient(180deg, #e55e8f 0%, #ef6262 100%);
 }
+.pin.email {
+  background: linear-gradient(180deg, #44456b 0%, #7175b9 100%);
+}
 
 a:link,
 a:visited {
@@ -156,26 +202,6 @@ h3 a:visited {
   -webkit-text-decoration: underline dashed #a19fb3;
 }
 
-h2 {
-  margin-top: 20pt;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 3rem;
-  line-height: 140%;
-  color: #63617a;
-}
-
-h3 {
-  margin-top: 12pt;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 2rem;
-  line-height: 140%;
-  color: #63617a;
-}
-
 a.jrnl:hover {
   color: #986b9d;
   text-decoration-color: #715692;
@@ -196,13 +222,12 @@ a.ubique:hover {
   color: #f6c11e;
   text-decoration-color: #f8da7c;
 }
-
-/* Media */
-p {
-  font-size: 1.2rem;
-  line-height: 2rem;
-  margin-bottom: 0;
-  margin-top: 2rem;
+.nowrap {
+  white-space: nowrap;
+}
+a.substack:hover {
+  color: #c41357;
+  text-decoration-color: #ff404a;
 }
 
 .media img {
@@ -241,7 +266,7 @@ p.copyright {
   h2,
   h3 {
     font-size: 1.8rem;
-    line-height: 3rem;
+    line-height: 3.2rem;
   }
   p {
     font-size: 1.2rem;
