@@ -6,11 +6,11 @@ body {
 }
 
 h1 {
-  font-family: "Playfair Display";
+  font-family: "Sedan";
   font-style: normal;
   font-weight: 400;
   font-size: 6rem;
-  line-height: 135%;
+  line-height: 125% !important;
   color: #353440;
 }
 
@@ -257,7 +257,37 @@ p.copyright {
   margin: 0 0.4em;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1120px) {
+  h1 {
+    margin-top: 1.5rem;
+    font-size: 4.6rem;
+    line-height: 125%;
+  }
+  h2,
+  h3 {
+    font-size: 2.2rem;
+    line-height: 3.2rem;
+  }
+  p,
+  body {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+  .menu {
+    margin: 3rem 0;
+  }
+
+  .media img {
+    max-width: 80px;
+    max-height: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 740px) {
   h1 {
     margin-top: 1.5rem;
     font-size: 3rem;
@@ -268,7 +298,8 @@ p.copyright {
     font-size: 1.8rem;
     line-height: 3.2rem;
   }
-  p {
+  p,
+  body {
     font-size: 1.2rem;
     line-height: 2rem;
   }
