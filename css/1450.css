@@ -96,7 +96,7 @@ a:hover .pin.large {
   background: linear-gradient(180deg, #f8da7c 0%, #f6c11e 100%);
 }
 .pin.substack {
-  background: url(../img/substack.png) center center no-repeat,
+  background: url(../img/substack.svg) center center no-repeat,
     linear-gradient(180deg, #ff404a 0%, #c41357 100%);
   background-size: cover;
 }
@@ -112,17 +112,7 @@ a:hover .pin.large {
   text-align: center;
   line-height: 1.4em;
 }
-.pin.email:before {
-  content: "@";
-  color: white;
-  font-weight: 900;
-  font-size: 0.6em;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  text-align: center;
-  line-height: 1.4em;
-}
+
 .pin.todo:before {
   content: "Don't";
   font-family: Montserrat;
@@ -152,8 +142,23 @@ a:hover .pin.large {
     linear-gradient(180deg, #986b9d 0%, #715692 100%);
   background-size: cover;
 }
+.pin.github {
+  background: url(../img/github.svg) center center no-repeat,
+    linear-gradient(180deg, #22272e 0%, #1c2128 100%);
+  background-size: cover;
+}
+.pin.linkedin {
+  background: url(../img/linkedin.svg) center center no-repeat,
+    linear-gradient(180deg, #1f75cc 0%, #0b66c2 100%);
+  background-size: cover;
+}
 .pin.summer {
   background: url(../img/summer.png) center center no-repeat #a0c6db;
+  background-size: cover;
+}
+.pin.email {
+  background: url(../img/email.svg) center center no-repeat,
+    linear-gradient(180deg, #44456b 0%, #7175b9 100%);
   background-size: cover;
 }
 
@@ -163,9 +168,6 @@ a:hover .pin.large {
 
 .pin.todo {
   background: linear-gradient(180deg, #e55e8f 0%, #ef6262 100%);
-}
-.pin.email {
-  background: linear-gradient(180deg, #44456b 0%, #7175b9 100%);
 }
 
 a:link,
@@ -222,6 +224,15 @@ a.ubique:hover {
   color: #f6c11e;
   text-decoration-color: #f8da7c;
 }
+a.github:hover {
+  color: #22272e;
+  text-decoration-color: #1c2128;
+}
+a.linkedin:hover {
+  color: #0b66c2;
+  text-decoration-color: #1f75cc;
+}
+
 .nowrap {
   white-space: nowrap;
 }
