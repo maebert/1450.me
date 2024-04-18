@@ -92,25 +92,17 @@ a:hover .pin.large {
   background: url(../img/manu.png) center center no-repeat #e5e8ee;
   background-size: cover;
 }
-.pin.ubique {
-  background: linear-gradient(180deg, #f8da7c 0%, #f6c11e 100%);
-}
+
 .pin.substack {
   background: url(../img/substack.svg) center center no-repeat,
     linear-gradient(180deg, #ff404a 0%, #c41357 100%);
   background-size: cover;
 }
 
-.pin.ubique:before {
-  content: "U";
-  color: #273645;
-  font-weight: 900;
-  font-size: 0.8em;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  text-align: center;
-  line-height: 1.4em;
+.pin.echo {
+  background: url(../img/echo.svg) center center no-repeat,
+    linear-gradient(180deg, #114e71 0%, #083b58 100%);
+  background-size: cover;
 }
 
 .pin.todo:before {
@@ -220,9 +212,9 @@ a.summer:hover {
   color: #81aac0;
   text-decoration-color: #a0c6db;
 }
-a.ubique:hover {
-  color: #f6c11e;
-  text-decoration-color: #f8da7c;
+a.echo:hover {
+  color: #083b58;
+  text-decoration-color: #114e71;
 }
 a.github:hover {
   color: #22272e;
