@@ -42,6 +42,8 @@ p {
 
 .container {
   padding: 0pt 8rem 0 6rem;
+  max-width: 980px;
+  margin: 0 auto;
 }
 
 .menu {
@@ -69,6 +71,7 @@ p {
   box-shadow: 4px 5px 8px -2px rgba(0, 0, 0, 0.08);
   margin-right: -6px;
 }
+
 .pin.small {
   margin-right: 0px;
 }
@@ -80,6 +83,7 @@ a:hover .pin {
     -2px -2px 4px rgba(0, 0, 0, 0.05);
   border-radius: 6px 54px 54px 54px;
 }
+
 /* .pin.large:hover,
 a:hover .pin.large {
   transform: scale(2) translateX(27px) translateY(37px);
@@ -99,10 +103,10 @@ a:hover .pin.large {
   background-size: cover;
 }
 
-.pin.echo {
-  background: url(../img/echo.svg) center center no-repeat,
-    linear-gradient(180deg, #114e71 0%, #083b58 100%);
-  background-size: cover;
+.pin.hyperspell {
+  background: url(../img/hyperspell.svg) center center no-repeat,
+    linear-gradient(180deg, #FBFBFC 0%, #E5E7EB 100%);
+  background-size: 65%;
 }
 
 .pin.todo:before {
@@ -134,20 +138,30 @@ a:hover .pin.large {
     linear-gradient(180deg, #986b9d 0%, #715692 100%);
   background-size: cover;
 }
+
 .pin.github {
   background: url(../img/github.svg) center center no-repeat,
     linear-gradient(180deg, #22272e 0%, #1c2128 100%);
   background-size: cover;
 }
+
+.pin.x {
+  background: url(../img/x.svg) center center no-repeat,
+    linear-gradient(180deg, #111 0%, #000 100%);
+  background-size: 65%;
+}
+
 .pin.linkedin {
   background: url(../img/linkedin.svg) center center no-repeat,
     linear-gradient(180deg, #1f75cc 0%, #0b66c2 100%);
   background-size: cover;
 }
+
 .pin.summer {
   background: url(../img/summer.png) center center no-repeat #a0c6db;
   background-size: cover;
 }
+
 .pin.email {
   background: url(../img/email.svg) center center no-repeat,
     linear-gradient(180deg, #44456b 0%, #7175b9 100%);
@@ -171,6 +185,7 @@ a:visited {
   text-underline-offset: 0.1em;
   transition: all 0.1s ease-in;
 }
+
 a:hover,
 a:active {
   color: #8a889c;
@@ -200,26 +215,37 @@ a.jrnl:hover {
   color: #986b9d;
   text-decoration-color: #715692;
 }
+
 a.tmdwa:hover {
   color: #f5645b;
   text-decoration-color: #f77f88;
 }
+
 a.todo:hover {
   color: #e55e8f;
   text-decoration-color: #ef6262;
 }
+
 a.summer:hover {
   color: #81aac0;
   text-decoration-color: #a0c6db;
 }
-a.echo:hover {
-  color: #083b58;
-  text-decoration-color: #114e71;
+
+a.hyperspell:hover {
+  color: #464C5B;
+  text-decoration-color: #6F7890;
 }
+
 a.github:hover {
   color: #22272e;
   text-decoration-color: #1c2128;
 }
+
+a.x:hover {
+  color: #000;
+  text-decoration-color: #111;
+}
+
 a.linkedin:hover {
   color: #0b66c2;
   text-decoration-color: #1f75cc;
@@ -228,6 +254,7 @@ a.linkedin:hover {
 .nowrap {
   white-space: nowrap;
 }
+
 a.substack:hover {
   color: #c41357;
   text-decoration-color: #ff404a;
@@ -266,11 +293,13 @@ p.copyright {
     font-size: 4.6rem;
     line-height: 125%;
   }
+
   h2,
   h3 {
     font-size: 2.2rem;
     line-height: 3.2rem;
   }
+
   p,
   body {
     font-size: 1.6rem;
@@ -280,6 +309,7 @@ p.copyright {
   .container {
     padding: 0 1rem;
   }
+
   .menu {
     margin: 3rem 0;
   }
@@ -296,11 +326,13 @@ p.copyright {
     font-size: 3rem;
     line-height: 135%;
   }
+
   h2,
   h3 {
     font-size: 1.8rem;
     line-height: 3.2rem;
   }
+
   p,
   body {
     font-size: 1.2rem;
@@ -310,6 +342,7 @@ p.copyright {
   .container {
     padding: 0 1rem;
   }
+
   .menu {
     font-size: 0.8rem;
     margin: 2rem 0 1rem 0;
@@ -318,6 +351,7 @@ p.copyright {
     display: inline-block;
     border-radius: 2rem;
   }
+
   .menu #logo {
     height: 1rem;
     vertical-align: middle;
